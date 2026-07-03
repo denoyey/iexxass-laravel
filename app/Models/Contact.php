@@ -2,16 +2,16 @@
 
 namespace App\Models;
 
-use Illuminate\Support\Facades\Mail;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use App\Mail\ContactMail;
-
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Mail;
 
 class Contact extends Model
 {
     use HasFactory;
-    protected $table = 'contacts'; // nama tabel sesuai DB
+
+    protected $table = 'contacts';
 
     public $fillable = ['name', 'email', 'subject', 'message'];
 
@@ -19,7 +19,7 @@ class Contact extends Model
     {
         parent::boot();
         static::created(function ($item) {
-            $adminEmail = "customer.care@iexxass.com";
+            $adminEmail = 'customer.care@iexxass.com';
 
             Mail::to($adminEmail)->send(new ContactMail($item));
         });

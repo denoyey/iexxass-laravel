@@ -8,53 +8,33 @@
 @theme {
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
-     --color-BG-IExxass: #030B7C;
-     --color-BG-White: #FFFFFF;
-     --color-BG-Black : #050506;
-     --font-AbhayaLibre:  "Abhaya Libre", serif ;
-
+    --color-BG-IExxass: #030B7C;
+    --color-BG-White: #FFFFFF;
+    --color-BG-Black: #050506;
+    --font-AbhayaLibre: "Abhaya Libre", serif;
 }
 
-.navbar-fixed{
+.navbar-fixed {
     @apply z-[9999] bg-red-400;
 }
 
-.hamburger-line{
+.hamburger-line {
     @apply w-[27px] h-[2px] my-2 block bg-BG-Black;
 }
 
-.hamburger-active > span:nth-child(1){
-    @apply  rotate-45;
+.hamburger-active>span:nth-child(1) {
+    @apply rotate-45;
 }
-.hamburger-active > span:nth-child(2){
+
+.hamburger-active>span:nth-child(2) {
     @apply scale-0;
 }
-.hamburger-active > span:nth-child(3){
-    @apply  -rotate-45;
+
+.hamburger-active>span:nth-child(3) {
+    @apply -rotate-45;
 }
+
 .button-type-One:hover {
-     background-color: var(--color-BG-IExxass);
-     color: var(--color-BG-White);
-}
-
-@layer header_one {
-    @keyframes transition-y-scroll {
-        from {
-            opacity: 0;
-            transform: translateY(50px) scale(0.9);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0) scale(1);
-        }
-    }
-
-    .header {
-        opacity: 0;
-        transform: translateY(50px) scale(0.9);
-    }
-
-    .header.show {
-        animation: transition-y-scroll 0.8s ease-out forwards;
-    }
+    background-color: var(--color-BG-IExxass);
+    color: var(--color-BG-White);
 }
