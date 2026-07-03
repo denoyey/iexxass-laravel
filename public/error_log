@@ -1,0 +1,75 @@
+[24-Dec-2025 23:45:30 UTC] PHP Warning:  require(/home/iexxassc/public_html/../iexxassc/iexxass_laravel/vendor/autoload.php): Failed to open stream: No such file or directory in /home/iexxassc/public_html/index.php on line 14
+[24-Dec-2025 23:45:30 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/iexxassc/public_html/../iexxassc/iexxass_laravel/vendor/autoload.php' (include_path='.:/opt/alt/php83/usr/share/pear:/opt/alt/php83/usr/share/php:/usr/share/pear:/usr/share/php') in /home/iexxassc/public_html/index.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/iexxassc/public_html/index.php on line 14
+[24-Dec-2025 23:45:33 UTC] PHP Warning:  require(/home/iexxassc/public_html/../iexxassc/iexxass_laravel/vendor/autoload.php): Failed to open stream: No such file or directory in /home/iexxassc/public_html/index.php on line 14
+[24-Dec-2025 23:45:33 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/iexxassc/public_html/../iexxassc/iexxass_laravel/vendor/autoload.php' (include_path='.:/opt/alt/php83/usr/share/pear:/opt/alt/php83/usr/share/php:/usr/share/pear:/usr/share/php') in /home/iexxassc/public_html/index.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/iexxassc/public_html/index.php on line 14
+[24-Dec-2025 23:45:56 UTC] PHP Warning:  require(/home/iexxassc/public_html/../iexxassc/iexxass_laravel/vendor/autoload.php): Failed to open stream: No such file or directory in /home/iexxassc/public_html/index.php on line 14
+[24-Dec-2025 23:45:56 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/iexxassc/public_html/../iexxassc/iexxass_laravel/vendor/autoload.php' (include_path='.:/opt/alt/php83/usr/share/pear:/opt/alt/php83/usr/share/php:/usr/share/pear:/usr/share/php') in /home/iexxassc/public_html/index.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/iexxassc/public_html/index.php on line 14
+[24-Dec-2025 23:45:58 UTC] PHP Warning:  require(/home/iexxassc/public_html/../iexxassc/iexxass_laravel/vendor/autoload.php): Failed to open stream: No such file or directory in /home/iexxassc/public_html/index.php on line 14
+[24-Dec-2025 23:45:58 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/iexxassc/public_html/../iexxassc/iexxass_laravel/vendor/autoload.php' (include_path='.:/opt/alt/php83/usr/share/pear:/opt/alt/php83/usr/share/php:/usr/share/pear:/usr/share/php') in /home/iexxassc/public_html/index.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/iexxassc/public_html/index.php on line 14
+[24-Dec-2025 23:46:03 UTC] PHP Warning:  require(/home/iexxassc/public_html/../iexxassc/iexxass_laravel/vendor/autoload.php): Failed to open stream: No such file or directory in /home/iexxassc/public_html/index.php on line 14
+[24-Dec-2025 23:46:03 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/iexxassc/public_html/../iexxassc/iexxass_laravel/vendor/autoload.php' (include_path='.:/opt/alt/php83/usr/share/pear:/opt/alt/php83/usr/share/php:/usr/share/pear:/usr/share/php') in /home/iexxassc/public_html/index.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/iexxassc/public_html/index.php on line 14
+[25-Dec-2025 04:00:37 UTC] PHP Warning:  mysqli::__construct(): php_network_getaddresses: getaddrinfo for iexxassc_iexxass failed: Name or service not known in /home/iexxassc/public_html/testdb.php on line 7
+[25-Dec-2025 04:00:37 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: php_network_getaddresses: getaddrinfo for iexxassc_iexxass failed: Name or service not known in /home/iexxassc/public_html/testdb.php:7
+Stack trace:
+#0 /home/iexxassc/public_html/testdb.php(7): mysqli->__construct()
+#1 {main}
+  thrown in /home/iexxassc/public_html/testdb.php on line 7
+[25-Dec-2025 04:01:01 UTC] PHP Warning:  mysqli::__construct(): php_network_getaddresses: getaddrinfo for iexxassc_laravel failed: Name or service not known in /home/iexxassc/public_html/testdb.php on line 7
+[25-Dec-2025 04:01:01 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: php_network_getaddresses: getaddrinfo for iexxassc_laravel failed: Name or service not known in /home/iexxassc/public_html/testdb.php:7
+Stack trace:
+#0 /home/iexxassc/public_html/testdb.php(7): mysqli->__construct()
+#1 {main}
+  thrown in /home/iexxassc/public_html/testdb.php on line 7
+[25-Dec-2025 04:01:03 UTC] PHP Warning:  mysqli::__construct(): php_network_getaddresses: getaddrinfo for iexxassc_laravel failed: Name or service not known in /home/iexxassc/public_html/testdb.php on line 7
+[25-Dec-2025 04:01:03 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: php_network_getaddresses: getaddrinfo for iexxassc_laravel failed: Name or service not known in /home/iexxassc/public_html/testdb.php:7
+Stack trace:
+#0 /home/iexxassc/public_html/testdb.php(7): mysqli->__construct()
+#1 {main}
+  thrown in /home/iexxassc/public_html/testdb.php on line 7
+[25-Dec-2025 04:01:04 UTC] PHP Warning:  mysqli::__construct(): php_network_getaddresses: getaddrinfo for iexxassc_laravel failed: Name or service not known in /home/iexxassc/public_html/testdb.php on line 7
+[25-Dec-2025 04:01:04 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: php_network_getaddresses: getaddrinfo for iexxassc_laravel failed: Name or service not known in /home/iexxassc/public_html/testdb.php:7
+Stack trace:
+#0 /home/iexxassc/public_html/testdb.php(7): mysqli->__construct()
+#1 {main}
+  thrown in /home/iexxassc/public_html/testdb.php on line 7
+[25-Dec-2025 04:01:29 UTC] PHP Warning:  mysqli::__construct(): php_network_getaddresses: getaddrinfo for iexxassc_laravel failed: Name or service not known in /home/iexxassc/public_html/testdb.php on line 7
+[25-Dec-2025 04:01:29 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: php_network_getaddresses: getaddrinfo for iexxassc_laravel failed: Name or service not known in /home/iexxassc/public_html/testdb.php:7
+Stack trace:
+#0 /home/iexxassc/public_html/testdb.php(7): mysqli->__construct()
+#1 {main}
+  thrown in /home/iexxassc/public_html/testdb.php on line 7
+[25-Dec-2025 04:03:19 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'iexxassc_iexxass'@'localhost' (using password: YES) in /home/iexxassc/public_html/testdb.php:8
+Stack trace:
+#0 /home/iexxassc/public_html/testdb.php(8): mysqli->__construct()
+#1 {main}
+  thrown in /home/iexxassc/public_html/testdb.php on line 8
+[25-Dec-2025 04:03:41 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'iexxassc_laravel'@'localhost' (using password: YES) in /home/iexxassc/public_html/testdb.php:8
+Stack trace:
+#0 /home/iexxassc/public_html/testdb.php(8): mysqli->__construct()
+#1 {main}
+  thrown in /home/iexxassc/public_html/testdb.php on line 8
+[25-Dec-2025 04:04:01 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'iexxassc_iexxass'@'localhost' (using password: YES) in /home/iexxassc/public_html/testdb.php:8
+Stack trace:
+#0 /home/iexxassc/public_html/testdb.php(8): mysqli->__construct()
+#1 {main}
+  thrown in /home/iexxassc/public_html/testdb.php on line 8
+[25-Dec-2025 04:04:03 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'iexxassc_iexxass'@'localhost' (using password: YES) in /home/iexxassc/public_html/testdb.php:8
+Stack trace:
+#0 /home/iexxassc/public_html/testdb.php(8): mysqli->__construct()
+#1 {main}
+  thrown in /home/iexxassc/public_html/testdb.php on line 8
