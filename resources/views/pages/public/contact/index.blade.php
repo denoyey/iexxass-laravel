@@ -1,61 +1,99 @@
-<div style="background-image: url('src/img/bg-footer.png') "
-    class=" h-[800px] w-full bg-center bg-cover bg-no-repeat flex flex-col items-center justify-center">
-    <div class="w-full h-full relative py-10 md:py-45 grid md:grid-cols-1 md:grid-cols-2">
-        <div class=" container md:order-1 order-2  ">
-            <!--@if (Session('success'))
--->
-            <!--    <div class="alert alert-success">{{ Session::get('success') }}</div>-->
-            <!--
-@endif-->
-            <form method="POST" action="{{ route('contact.us') }}" id="contactForm"
-                class="max-w-sm mx-auto font-AbhayaLibre px-[10px]">
-                @csrf
-                <div id="statusMessage" class="text-white mt-5"></div> <br>
-                <div class="mb-5">
-                    <label for="name" class="block mb-2.5 text-sm font-medium text-heading text-BG-White">
-                        Name</label>
-                    <input type="text" id="name" name="name"
-                        class=" bg-white opacity-20   text-heading text-sm   block w-full px-3 py-2.5  placeholder:text-BG-IExxass"
-                        placeholder="Your Name" required />
-                </div>
-                <div class="mb-5">
-                    <label for="email" class="block mb-2.5 text-sm font-medium text-heading text-BG-White">
-                        email</label>
-                    <input type="email" id="email" name="email"
-                        class=" bg-white opacity-20   text-heading text-sm   block w-full px-3 py-2.5  placeholder:text-BG-IExxass"
-                        placeholder="Your Email Address" required />
-                </div>
-                <div class="mb-5">
-                    <label for="subject" class="block mb-2.5 text-sm font-medium text-heading text-BG-White">
-                        Subject</label>
-                    <input type="text" id="subject" name="subject"
-                        class=" bg-white opacity-20   text-heading text-sm   block w-full px-3 py-2.5  placeholder:text-BG-IExxass"
-                        placeholder="Your Subject" required />
-                </div>
-                <div class="mb-5">
-                    <label for="message"
-                        class="block mb-2.5 text-sm font-medium text-heading text-BG-White">Description
-                    </label>
-                    <textarea type="message" id="message" rows="4" name="message"
-                        class=" bg-white opacity-20   text-heading text-sm   block w-full px-3 py-2.5  placeholder:text-BG-IExxass"
-                        placeholder="your message" required> </textarea>
-                </div>
-                <div class="g-recaptcha" data-sitekey="{{ env('RECAPTCHA_SITE_KEY') }}"></div>
-                <button type="submit" id="submitBtn"
-                    class="text-white bg-BG-IExxass  text-sm px-10 py-2.5 mt-5 focus:outline-none">Submit</button>
-            </form>
+<div
+    class="relative w-full pt-16 pb-32 md:pt-24 md:pb-32 lg:pb-40 bg-linear-to-b from-BG-IExxass from-92% md:from-85% to-black font-AbhayaLibre flex items-center justify-center overflow-hidden">
 
-        </div>
-        <div
-            class="container mx-auto px-[20px] lg:px-0 items-center text-center md:text-left font-AbhayaLibre text-white md:py-20 md:order-2 order-1 ">
-            <h1 class="header text-[30px] lg:text-[50px] xl:text-[70px] font-extrabold racking-[5px]">Contact Us</h1>
-            <h1 class="header text-[25px] lg:text-[35px] xl:text-[45px] tracking-[5px] md:tracking-[12px]">CONTACT US!
-                REACH
-                <br> OUT VIA MESSAGE! <br> HOW CAN WE HELP?
-            </h1>
-        </div>
+    <!-- Laptop Background -->
+    <div
+        class="absolute inset-0 bg-[url('{{ asset('src/img/bg-footer.png') }}')] bg-cover bg-center bg-no-repeat opacity-25 pointer-events-none">
     </div>
 
-    @push('scripts')
-        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    @endpush
+    <!-- Top Fade (Blends flawlessly with Service section) -->
+    <div
+        class="absolute top-0 left-0 w-full h-40 bg-linear-to-b from-BG-IExxass to-BG-IExxass/0 pointer-events-none z-10">
+    </div>
+
+    <div class="relative z-10 container mx-auto px-6 md:px-12 lg:px-24">
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-32 items-start">
+
+            <!-- Left: Typography & Info -->
+            <div class="header text-left pt-10">
+                <h1 class="text-[36px] md:text-[65px] lg:text-[80px] text-white font-bold leading-[1.05] mb-6 md:mb-8">
+                    Let's connect.
+                </h1>
+                <p class="text-gray-300 text-[15px] md:text-[22px] leading-relaxed max-w-lg font-light">
+                    We would love to hear from you. Whether you have a question about our services or need assistance
+                    with your project, our team is ready to help.
+                </p>
+            </div>
+
+            <!-- Right: Card-less Form with Underline Inputs -->
+            <div class="header w-full max-w-xl mx-auto lg:ml-auto pt-0 lg:pt-10">
+                <form method="POST" action="{{ route('contact.us') }}" id="contactForm">
+                    @csrf
+                    <div id="statusMessage" class="text-blue-300 text-sm mb-6"></div>
+
+                    <div class="space-y-8 md:space-y-12">
+                        <!-- Name & Email (Row) -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+                            <div class="relative group">
+                                <label for="name"
+                                    class="block text-[10px] md:text-[12px] font-semibold tracking-[2px] text-gray-400 uppercase mb-1 md:mb-2 transition-colors group-focus-within:text-white">Name</label>
+                                <input type="text" id="name" name="name"
+                                    class="w-full bg-transparent border-0 border-b border-white/30 px-0 py-1 md:py-1.5 text-white text-[14px] md:text-[16px] placeholder-transparent focus:outline-none focus:ring-0 focus:border-white transition-all duration-300"
+                                    placeholder="John Doe" required autocomplete="name" />
+                            </div>
+
+                            <div class="relative group">
+                                <label for="email"
+                                    class="block text-[10px] md:text-[12px] font-semibold tracking-[2px] text-gray-400 uppercase mb-1 md:mb-2 transition-colors group-focus-within:text-white">Email
+                                    Address</label>
+                                <input type="email" id="email" name="email"
+                                    class="w-full bg-transparent border-0 border-b border-white/30 px-0 py-1 md:py-1.5 text-white text-[14px] md:text-[16px] placeholder-transparent focus:outline-none focus:ring-0 focus:border-white transition-all duration-300"
+                                    placeholder="john@example.com" required autocomplete="email" />
+                            </div>
+                        </div>
+
+                        <!-- Subject -->
+                        <div class="relative group">
+                            <label for="subject"
+                                class="block text-[10px] md:text-[12px] font-semibold tracking-[2px] text-gray-400 uppercase mb-1 md:mb-2 transition-colors group-focus-within:text-white">Subject</label>
+                            <input type="text" id="subject" name="subject"
+                                class="w-full bg-transparent border-0 border-b border-white/30 px-0 py-1 md:py-1.5 text-white text-[14px] md:text-[16px] placeholder-transparent focus:outline-none focus:ring-0 focus:border-white transition-all duration-300"
+                                placeholder="How can we help?" required autocomplete="off" />
+                        </div>
+
+                        <!-- Message -->
+                        <div class="relative group">
+                            <label for="message"
+                                class="block text-[10px] md:text-[12px] font-semibold tracking-[2px] text-gray-400 uppercase mb-1 md:mb-2 transition-colors group-focus-within:text-white">Message</label>
+                            <textarea id="message" rows="1" name="message"
+                                class="w-full bg-transparent border-0 border-b border-white/30 px-0 py-1 md:py-1.5 text-white text-[14px] md:text-[16px] placeholder-transparent focus:outline-none focus:ring-0 focus:border-white transition-all duration-300 resize-none"
+                                placeholder="Write your message here..." required autocomplete="off"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- ReCaptcha & Submit Button (Outside space-y-12 to eliminate huge gaps) -->
+                    <div class="mt-6 flex flex-col gap-4">
+                        <!-- ReCaptcha (Scaled down strictly) -->
+                        <div class="transform scale-[0.70] md:scale-75 origin-top-left h-[55px] md:h-[60px]">
+                            <div class="g-recaptcha" data-sitekey="{{ env('RECAPTCHA_SITE_KEY') }}"></div>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="text-left mt-1">
+                            <button type="submit" id="submitBtn"
+                                class="w-full sm:w-auto inline-block border border-white bg-transparent text-white hover:bg-white hover:text-BG-IExxass font-bold text-[11px] md:text-[12px] tracking-[3px] uppercase px-8 py-3 md:px-10 md:py-3 rounded-none transition-all duration-300">
+                                Send Message
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+@push('scripts')
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+@endpush

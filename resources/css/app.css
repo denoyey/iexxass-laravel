@@ -15,7 +15,7 @@
 }
 
 .navbar-fixed {
-    @apply z-[9999] bg-red-400;
+    @apply z-9999 bg-red-400;
 }
 
 .hamburger-line {
@@ -37,4 +37,33 @@
 .button-type-One:hover {
     background-color: var(--color-BG-IExxass);
     color: var(--color-BG-White);
+}
+
+/* Custom Elegant Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.03);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #3b82f6;
+    /* Bright Blue for high contrast */
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #60a5fa;
+}
+
+/* Fix Chrome/Browser Autofill White Background on Transparent Inputs */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-text-fill-color: white !important;
+    transition: background-color 5000s ease-in-out 0s;
 }

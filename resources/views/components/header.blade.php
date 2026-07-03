@@ -2,29 +2,43 @@
     <div class="container mx-auto font-AbhayaLibre ">
         <div class="relative flex items-center">
             <div class="flex items-center px-4 lg:flex-1 lg:justify-center">
-                <button id="hamburger" name="hamburger" type="button" class="block absolute left-4 md:hidden">
-                    <span class="hamburger-line trantion duration-300  ease-in-out origin-top-left"></span>
-                    <span class="hamburger-line transition duration-300 ease-in-out"></span>
-                    <span class="hamburger-line trantion duration-300 ease-in-out origin-bottom-left-left"></span>
+                <button id="hamburger" name="hamburger" type="button"
+                    class="block absolute left-4 md:hidden group focus:outline-none">
+                    <div class="relative w-7 h-7">
+                        <!-- Hamburger Icon -->
+                        <svg class="absolute inset-0 w-7 h-7 text-BG-IExxass transition-all duration-300 transform group-[.hamburger-active]:opacity-0 group-[.hamburger-active]:scale-50 group-[.hamburger-active]:-rotate-90"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                        <!-- Close Icon -->
+                        <svg class="absolute inset-0 w-7 h-7 text-BG-IExxass transition-all duration-300 transform opacity-0 scale-50 rotate-90 group-[.hamburger-active]:opacity-100 group-[.hamburger-active]:scale-100 group-[.hamburger-active]:rotate-0"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M6 18L18 6M6 6l12 12">
+                            </path>
+                        </svg>
+                    </div>
                 </button>
                 <nav id="nav-menu"
-                    class="hidden absolute py-5  bg-white shadow-lg max-w-[200px] w-full mt-15 md:mt-0 lg:mt-10 left-0 top-full   md:block md:absolute md:left-1/2 md:-translate-x-1/2 md:top-1/2 lg:-translate-y-1/2 md:bg-transparent md:shadow-none md:max-w-full rounded-br-4xl">
-                    <ul class="block md:flex md:justify-center font-bold ">
-                        <li class="group">
+                    class="hidden absolute py-6 bg-white/95 backdrop-blur-xl shadow-md border border-gray-100 w-[calc(100%-2rem)] left-4 top-[45px] rounded-md md:block md:w-auto md:border-none md:backdrop-blur-none md:mt-0 lg:mt-10 md:absolute md:left-1/2 md:-translate-x-1/2 md:top-1/2 lg:-translate-y-1/2 md:bg-transparent md:shadow-none md:max-w-full md:rounded-none z-50">
+                    <ul class="block md:flex md:justify-center font-bold text-center">
+                        <li class="group mb-2 md:mb-0">
                             <a href="javascript:void(0)" data-target="home"
-                                class=" menu-link text-base  py-2 mx-8 flex group-hover:text-black">Home</a>
+                                class="menu-link text-[16px] py-2 md:mx-6 flex justify-center w-full group-hover:text-blue-600 transition-colors">Home</a>
                         </li>
-                        <li class="group">
+                        <li class="group mb-2 md:mb-0">
                             <a href="javascript:void(0)" data-target="about-us"
-                                class="menu-link text-base py-2 mx-8 flex group-hover:text-black">About Us</a>
+                                class="menu-link text-[16px] py-2 md:mx-6 flex justify-center w-full group-hover:text-blue-600 transition-colors">About
+                                Us</a>
                         </li>
-                        <li class="group">
+                        <li class="group mb-2 md:mb-0">
                             <a href="javascript:void(0)" data-target="service"
-                                class="menu-link text-base  py-2 mx-8 flex group-hover:text-black">Service</a>
+                                class="menu-link text-[16px] py-2 md:mx-6 flex justify-center w-full group-hover:text-blue-600 transition-colors">Service</a>
                         </li>
                         <li class="group">
                             <a href="javascript:void(0)" data-target="contact"
-                                class="menu-link text-base  py-2 mx-8 flex group-hover:text-black">Contact</a>
+                                class="menu-link text-[16px] py-2 md:mx-6 flex justify-center w-full group-hover:text-blue-600 transition-colors">Contact</a>
                         </li>
                     </ul>
                 </nav>
@@ -43,7 +57,7 @@
                         </button>
                         <!-- Dropdown Menu -->
                         <div id="langDropdown"
-                            class="absolute top-11 left-0 flex w-fit flex-col overflow-hidden rounded-radius bg-surface-alt hidden opacity-0"
+                            class="absolute top-11 left-0 w-fit flex-col overflow-hidden rounded-radius bg-surface-alt hidden opacity-0"
                             role="menu">
                             @foreach (config('app.available_locales') as $label => $locale)
                                 <a href="{{ route('lang.switch', $locale) }}"

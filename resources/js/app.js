@@ -32,8 +32,12 @@ import { initContactForm } from './pages/public/contact';
 // Import GSAP animations
 import { initAnimations } from './animations/gsap/index';
 
+// Import Global Security Scripts
+import { initImageSecurity } from './security/image-protection';
+
 document.addEventListener("DOMContentLoaded", () => {
     initAnimations();
     initMap();
     initContactForm();
+    initImageSecurity();
 });

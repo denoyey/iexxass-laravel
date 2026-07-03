@@ -34,7 +34,7 @@
     <link rel="icon" type="image/png" href="{{ asset('src/img/logo.png') }}">
 </head>
 
-<body class="bg-white">
+<body class="bg-white selection:bg-blue-600 selection:text-white">
     <section id="home">
         <x-header />
         @yield('home')

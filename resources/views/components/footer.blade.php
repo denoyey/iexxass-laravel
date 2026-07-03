@@ -1,10 +1,10 @@
-<footer class="w-full relative bg-black">
+<footer class="w-full relative bg-black -mt-px">
     <div class="container flex flex-col px-[40px] md:px-[80px] xl:px-[200px] mx-auto m-0">
 
         <div class="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-1 my-12 leading-relaxed">
 
             <!-- Kolom 1 -->
-            <div class="text-sm text-white  font-AbhayaLibre">
+            <div class="text-sm text-white font-AbhayaLibre">
                 <p class="text-[15md:px] md:text 12px] md:tex4-[20px] text-sm font-Alconica text-red-jongveksi-two">
                     I'Exxass</p>
                 <p class="py-2 text-[15px]">
@@ -13,7 +13,6 @@
                 <a href="mailto:customer.care@iexxass.com" class="text-[10px] underline">Email Customare Care I'Exxass</a>
                 |
                 <a href="mailto:support@iexxass.com" class="text-[10px] underline">Email Support I'Exxass</a> <br>
-
 
                 <!-- WhatsApp -->
                 <x-cta-whatsapp
