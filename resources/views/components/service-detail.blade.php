@@ -41,27 +41,8 @@
                     {{ $description }}</p>
 
                 <div class="flex flex-col">
-                    <!-- Action & Price Section -->
-                    <div
-                        class="service-anim order-2 md:order-1 pt-8 md:pt-0 mt-4 md:mt-0 mb-0 md:mb-12 pb-2 md:pb-8 border-t md:border-t-0 md:border-b border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5 sm:gap-8 w-full">
-                        @if ($price)
-                            <div class="w-full sm:w-auto text-left">
-                                <span
-                                    class="block text-[11px] md:text-sm text-blue-300 uppercase tracking-[3px] mb-1 sm:mb-2">Starting
-                                    From</span>
-                                <span
-                                    class="text-[24px] sm:text-[26px] md:text-[32px] font-bold text-white tracking-wide block">
-                                    {{ str_replace(['Start From ', 'Start from '], '', $price) }}
-                                </span>
-                            </div>
-                        @endif
-
-                        <x-cta-whatsapp text="Let's Connect"
-                            class="w-full sm:w-auto text-center inline-block border border-white/30 text-white hover:bg-white hover:text-BG-IExxass active:bg-white active:text-BG-IExxass active:scale-95 px-8 py-3 rounded-md transition-all duration-200 uppercase tracking-[3px] text-xs font-semibold" />
-                    </div>
-
                     <!-- Why Choose Section -->
-                    <div class="order-1 md:order-2 flex flex-col">
+                    <div class="flex flex-col mb-4 md:mb-6">
                         <h2
                             class="service-anim text-[20px] md:text-[24px] lg:text-[28px] font-semibold mb-6 md:mb-8 text-blue-300">
                             {{ __('message.service.why') }}
@@ -74,7 +55,7 @@
                                     [&::-webkit-scrollbar-track]:bg-transparent! 
                                     [&::-webkit-scrollbar-thumb]:bg-blue-400/30! [&::-webkit-scrollbar-thumb]:rounded-full! hover:[&::-webkit-scrollbar-thumb]:bg-blue-400/60!">
                             <ol
-                                class="list-none grid grid-cols-1 sm:grid-cols-2 gap-6 text-[16px] md:text-[18px] text-gray-300">
+                                class="list-none grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 2xl:grid-cols-2 gap-6 text-[16px] md:text-[18px] text-gray-300">
                                 @foreach ($features as $index => $feature)
                                     <li class="flex items-start group/item">
                                         <span
@@ -87,6 +68,25 @@
                                 @endforeach
                             </ol>
                         </div>
+                    </div>
+
+                    <!-- Action & Price Section -->
+                    <div
+                        class="service-anim pt-8 border-t border-white/10 flex flex-col sm:flex-row flex-wrap items-start sm:items-center justify-between gap-5 sm:gap-8 lg:gap-4 xl:gap-8 w-full">
+                        @if ($price)
+                            <div class="w-full sm:w-auto text-left flex-1 min-w-[200px]">
+                                <span
+                                    class="block text-[11px] md:text-sm text-blue-300 uppercase tracking-[3px] mb-1 sm:mb-2">Starting
+                                    From</span>
+                                <span
+                                    class="text-[24px] sm:text-[26px] md:text-[32px] lg:text-[24px] xl:text-[32px] font-bold text-white tracking-wide block whitespace-nowrap">
+                                    {{ str_replace(['Start From ', 'Start from '], '', $price) }}
+                                </span>
+                            </div>
+                        @endif
+
+                        <x-cta-whatsapp text="Let's Connect"
+                            class="w-full sm:w-auto text-center inline-block border border-white/30 text-white hover:bg-white hover:text-BG-IExxass active:bg-white active:text-BG-IExxass active:scale-95 px-8 lg:px-5 xl:px-8 py-3 rounded-md transition-all duration-200 uppercase tracking-[3px] text-xs font-semibold whitespace-nowrap shrink-0" />
                     </div>
                 </div>
             </div>

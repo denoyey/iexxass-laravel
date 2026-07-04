@@ -1,33 +1,36 @@
 <div
-    class="relative w-full pt-16 pb-32 md:pt-24 md:pb-32 lg:pb-40 bg-linear-to-b from-BG-IExxass from-92% md:from-85% to-black font-AbhayaLibre flex items-center justify-center overflow-hidden">
+    class="relative w-full -mt-px pt-16 pb-32 md:pt-24 md:pb-32 lg:pb-40 bg-black font-AbhayaLibre flex items-center justify-center overflow-hidden">
 
-    <!-- Laptop Background -->
-    <div
-        class="absolute inset-0 bg-[url('{{ asset('src/img/bg-footer.png') }}')] bg-cover bg-center bg-no-repeat opacity-25 pointer-events-none">
+    <!-- Image Background with Black Overlay -->
+    <div class="absolute inset-0 bg-cover bg-center bg-no-repeat pointer-events-none"
+        style="background-image: url('{{ asset('src/img/bg-footer.png') }}');">
     </div>
+    <div class="absolute inset-0 bg-black/30 pointer-events-none"></div>
 
-    <!-- Top Fade (Blends flawlessly with Service section) -->
+    <!-- Top Fade (Smoothly blends the blue boundary into the black photo) -->
     <div
-        class="absolute top-0 left-0 w-full h-40 bg-linear-to-b from-BG-IExxass to-BG-IExxass/0 pointer-events-none z-10">
+        class="absolute top-0 left-0 w-full h-24 bg-linear-to-b from-BG-IExxass to-BG-IExxass/0 pointer-events-none z-10">
     </div>
 
     <div class="relative z-10 container mx-auto px-6 md:px-12 lg:px-24">
 
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-32 items-start">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-32 items-center">
 
             <!-- Left: Typography & Info -->
-            <div class="header text-left pt-10">
-                <h1 class="text-[36px] md:text-[65px] lg:text-[80px] text-white font-bold leading-[1.05] mb-6 md:mb-8">
+            <div class="section-header text-left pt-10">
+                <h1
+                    class="text-[36px] md:text-[65px] lg:text-[50px] xl:text-[65px] 2xl:text-[80px] text-white font-bold leading-[1.05] mb-6 md:mb-8">
                     Let's connect.
                 </h1>
-                <p class="text-gray-300 text-[15px] md:text-[22px] leading-relaxed max-w-lg font-light">
+                <p
+                    class="text-gray-300 text-[15px] md:text-[22px] lg:text-[16px] xl:text-[18px] 2xl:text-[22px] leading-relaxed max-w-lg font-light">
                     We would love to hear from you. Whether you have a question about our services or need assistance
                     with your project, our team is ready to help.
                 </p>
             </div>
 
             <!-- Right: Card-less Form with Underline Inputs -->
-            <div class="header w-full max-w-xl mx-auto lg:ml-auto pt-0 lg:pt-10">
+            <div class="section-header w-full pt-0 lg:pt-10">
                 <form method="POST" action="{{ route('contact.us') }}" id="contactForm">
                     @csrf
                     <div id="statusMessage" class="text-blue-300 text-sm mb-6"></div>

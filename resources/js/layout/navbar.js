@@ -90,6 +90,11 @@ document.querySelectorAll('.menu-link').forEach(link => {
         if (section) {
             section.scrollIntoView({ behavior: 'smooth' });
             history.pushState(null, '', window.location.pathname);
+
+            const hamburgerBtn = document.querySelector("#hamburger");
+            if (hamburgerBtn && hamburgerBtn.classList.contains('hamburger-active')) {
+                hamburgerBtn.click();
+            }
         }
     });
 });

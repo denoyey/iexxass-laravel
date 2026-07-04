@@ -12,7 +12,7 @@ export function initScrollAnimations() {
         const rest = Array.from(heroElements).slice(2);
 
         const tl = gsap.timeline({ delay: 0.1 });
-        
+
         // 1. Logo comes from bottom to top
         tl.from(logo, {
             y: 60,
@@ -20,21 +20,21 @@ export function initScrollAnimations() {
             duration: 1,
             ease: "power3.out"
         })
-        // 2. Title slides out from left to right (as if emerging from logo)
-        .from(title, {
-            x: -80,
-            opacity: 0,
-            duration: 1,
-            ease: "power3.out"
-        }, "-=0.6")
-        // 3. Tagline and buttons fade in from below
-        .from(rest, {
-            y: 30,
-            opacity: 0,
-            duration: 0.8,
-            stagger: 0.2,
-            ease: "power3.out"
-        }, "-=0.4");
+            // 2. Title slides out from left to right (as if emerging from logo)
+            .from(title, {
+                x: -80,
+                opacity: 0,
+                duration: 1,
+                ease: "power3.out"
+            }, "-=0.6")
+            // 3. Tagline and buttons fade in from below
+            .from(rest, {
+                y: 30,
+                opacity: 0,
+                duration: 0.8,
+                stagger: 0.2,
+                ease: "power3.out"
+            }, "-=0.4");
     }
 
     // Sequential Stagger for Section Headers (About, Services)
@@ -83,12 +83,34 @@ export function initScrollAnimations() {
         });
     }
 
-    // Custom GSAP Hover animations for cards to prevent CSS conflict
+    // Custom GSAP Hover animations & Scroll Entrance for cards
     const cards = document.querySelectorAll(".card");
-    cards.forEach(card => {
-        card.addEventListener("mouseenter", () => gsap.to(card, { y: -8, duration: 0.3, ease: "power2.out" }));
-        card.addEventListener("mouseleave", () => gsap.to(card, { y: 0, duration: 0.3, ease: "power2.out" }));
-    });
+    if (cards.length > 0) {
+        // Entrance animation on scroll
+        gsap.set(cards, { opacity: 0, y: 40, scale: 0.95 });
+        ScrollTrigger.create({
+            trigger: cards[0].parentElement, // The grid container
+            start: "top 80%",
+            once: true,
+            onEnter: () => {
+                gsap.to(cards, {
+                    opacity: 1,
+                    y: 0,
+                    scale: 1,
+                    duration: 0.8,
+                    stagger: 0.2, // Sequential stagger effect
+                    ease: "power2.out",
+                    overwrite: "auto"
+                });
+            }
+        });
+
+        // Hover animations
+        cards.forEach(card => {
+            card.addEventListener("mouseenter", () => gsap.to(card, { y: -8, duration: 0.3, ease: "power2.out" }));
+            card.addEventListener("mouseleave", () => gsap.to(card, { y: 0, duration: 0.3, ease: "power2.out" }));
+        });
+    }
 
     // GSAP Scroll Animation for Quote Elements
     const quoteElements = document.querySelectorAll(".quote-element");

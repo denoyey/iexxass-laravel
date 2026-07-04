@@ -1,7 +1,7 @@
 @props(['icon', 'title', 'description', 'target', 'extraClass' => ''])
 
 <div
-    class="card header flex flex-col h-full {{ $extraClass }} p-8 md:p-10 text-left bg-white/5 backdrop-blur-xl border border-white/10 rounded-md shadow-lg hover:bg-white/10 hover:shadow-2xl hover:border-white/20 transition-all duration-500 cursor-pointer">
+    class="card flex flex-col h-full {{ $extraClass }} p-8 md:p-10 text-left bg-white/5 backdrop-blur-xl border border-white/10 rounded-md shadow-lg hover:bg-white/10 hover:shadow-2xl hover:border-white/20 transition-all duration-500 cursor-pointer">
     <div class="mb-6">
         <img src="{{ asset($icon) }}" alt="{{ $title }}" loading="lazy"
             class="w-[60px] h-[60px] object-contain group-hover:scale-110 transition-transform duration-500">

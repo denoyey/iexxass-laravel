@@ -8,28 +8,30 @@
                 {{-- Logo + Title --}}
                 <div class="flex items-end justify-center gap-3 md:gap-5 w-full">
                     <img src="{{ asset('src/img/logoo.png') }}" alt="Logo" loading="lazy"
-                        class="hero-anim shrink-0 w-9 h-[60px] md:w-16 md:h-auto mx-0 object-contain">
+                        class="hero-anim shrink-0 w-9 h-[60px] md:w-16 md:h-auto mx-0 object-contain will-change-transform">
                     <div class="relative" style="clip-path: inset(-50% -50% -50% 0);">
                         <h1
-                            class="hero-anim text-4xl xl:text-8xl md:text-7xl tracking-[12px] md:tracking-[50px] xl:tracking-[60px] font-bold drop-shadow-2xl leading-none md:-translate-y-7 -translate-y-3">
+                            class="hero-anim text-4xl xl:text-8xl md:text-7xl tracking-[12px] md:tracking-[50px] xl:tracking-[60px] font-bold drop-shadow-none md:drop-shadow-2xl leading-none md:-translate-y-7 -translate-y-3 will-change-transform">
                             Exxass </h1>
                     </div>
                 </div>
                 {{-- Tagline --}}
                 <p
-                    class="hero-anim text-[10px] md:text-xl py-2 text-black drop-shadow-xl tracking-[5px] md:tracking-[12px]">
+                    class="hero-anim text-[10px] md:text-xl py-2 text-black drop-shadow-none md:drop-shadow-xl tracking-[5px] md:tracking-[12px] will-change-transform">
                     Transforming the Future of Connectivity
                 </p>
             </div>
         </div>
-        <div class="hero-anim flex items-center justify-center mt-20 font-AbhayaLibre">
-            <x-cta-whatsapp text="Let's Connect" class="bg-BG-IExxass text-white px-10 md:px-12 py-2 md:py-2.5 mx-2" />
+        <div class="hero-anim flex flex-row items-center justify-center mt-20 font-AbhayaLibre gap-3 md:gap-4">
+            <x-cta-whatsapp text="Let's Connect"
+                class="bg-BG-IExxass text-white text-sm md:text-base px-6 md:px-12 py-2 md:py-2.5" />
             <button
-                class="text-BG-IExxass border border-BG-IExxass px-6 md:px-9 py-2 md:py-2.5 mx-2 hover:bg-BG-IExxass hover:text-white transition"
+                class="text-BG-IExxass border border-BG-IExxass text-sm md:text-base px-5 md:px-9 py-2 md:py-2.5 hover:bg-BG-IExxass hover:text-white transition"
                 onclick="openModal('modelConfirm')">
                 E-Book Portofolio
             </button>
-            <x-confirm-modal id="modelConfirm" message="Are you download E-Book Portofolio?" :confirmUrl="route('file.download')" />
         </div>
+        <x-pdf-modal id="modelConfirm" pdfUrl="{{ asset('uploads/pdf/portofolio.pdf') }}"
+            downloadUrl="{{ route('file.download') }}" />
     </div>
 @endsection

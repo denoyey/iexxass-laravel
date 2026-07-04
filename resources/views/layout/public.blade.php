@@ -53,6 +53,8 @@
         <div id='tawk_69270f78484b63196744524f'></div>
     </section>
 
+    <x-back-to-top />
+
     @stack('scripts')
 </body>
 

@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('throttle:guest')->group(function () {
     Route::get('/', [HalamanController::class, 'dashboard'])->name('dashboard');
     Route::post('/', [ContactController::class, 'store'])->name('contact.us');
-    Route::get('/portofolio', [FileebookController::class, 'download'])->name('file.download');
+    Route::get('/download/ebook-portofolio', [FileebookController::class, 'download'])->name('file.download');
     Route::get('/lang/{locale}', function (string $locale) {
         if (! in_array($locale, ['en', 'id', 'fr'])) {
             abort(400);
