@@ -1,6 +1,7 @@
 @props(['id', 'pdfUrl', 'downloadUrl'])
 
-<div id="{{ $id }}" class="fixed hidden z-100 inset-0 bg-black/80 overflow-y-auto h-full w-full">
+<div id="{{ $id }}" data-lenis-prevent="true"
+    class="fixed hidden z-99999 inset-0 bg-black/80 overflow-hidden overscroll-none h-full w-full">
     <div class="min-h-full w-full flex items-center justify-center p-4 md:p-8"
         onclick="closeModal('{{ $id }}')">
         <div class="relative shadow-2xl rounded-md bg-white w-full max-w-4xl h-[75vh] flex flex-col overflow-hidden"

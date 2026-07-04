@@ -41,7 +41,6 @@ window.closeModal = function (modalId) {
                 const header = document.querySelector('header');
 
                 body.classList.remove('overflow-y-hidden');
-                window.lenis?.start();
 
                 body.style.paddingRight = '';
                 if (header) {
