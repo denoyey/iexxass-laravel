@@ -2,7 +2,7 @@
     <div class="container mx-auto font-AbhayaLibre ">
         <div class="relative flex items-center">
             <div class="flex items-center px-4 lg:flex-1 lg:justify-center">
-                <button id="hamburger" name="hamburger" type="button"
+                <button id="hamburger" name="hamburger" type="button" aria-label="Toggle navigation menu"
                     class="block absolute left-4 md:hidden group focus:outline-none">
                     <div class="relative w-7 h-7">
                         <!-- Hamburger Icon -->
@@ -24,21 +24,20 @@
                     class="hidden absolute py-6 bg-white/95 backdrop-blur-xl shadow-md border border-gray-100 w-[calc(100%-2rem)] left-4 top-[45px] rounded-md md:block md:w-auto md:border-none md:backdrop-blur-none md:mt-0 lg:mt-10 md:absolute md:left-1/2 md:-translate-x-1/2 md:top-1/2 lg:-translate-y-1/2 md:bg-transparent md:shadow-none md:max-w-full md:rounded-none z-50">
                     <ul class="block md:flex md:justify-center font-bold text-center">
                         <li class="group mb-2 md:mb-0">
-                            <a href="javascript:void(0)" data-target="home"
-                                class="menu-link text-[16px] py-2 md:mx-6 flex justify-center w-full group-hover:text-blue-600 transition-colors">Home</a>
+                            <a href="#home" data-target="home"
+                                class="menu-link text-[16px] py-2 md:mx-6 flex justify-center w-full group-hover:text-blue-600 transition-colors">{{ __('Home') }}</a>
                         </li>
                         <li class="group mb-2 md:mb-0">
-                            <a href="javascript:void(0)" data-target="about-us"
-                                class="menu-link text-[16px] py-2 md:mx-6 flex justify-center w-full group-hover:text-blue-600 transition-colors">About
-                                Us</a>
+                            <a href="#about-us" data-target="about-us"
+                                class="menu-link text-[16px] py-2 md:mx-6 flex justify-center w-full group-hover:text-blue-600 transition-colors">{{ __('About Us') }}</a>
                         </li>
                         <li class="group mb-2 md:mb-0">
-                            <a href="javascript:void(0)" data-target="service"
-                                class="menu-link text-[16px] py-2 md:mx-6 flex justify-center w-full group-hover:text-blue-600 transition-colors">Service</a>
+                            <a href="#service" data-target="service"
+                                class="menu-link text-[16px] py-2 md:mx-6 flex justify-center w-full group-hover:text-blue-600 transition-colors">{{ __('Service') }}</a>
                         </li>
                         <li class="group">
-                            <a href="javascript:void(0)" data-target="contact"
-                                class="menu-link text-[16px] py-2 md:mx-6 flex justify-center w-full group-hover:text-blue-600 transition-colors">Contact</a>
+                            <a href="#contact" data-target="contact"
+                                class="menu-link text-[16px] py-2 md:mx-6 flex justify-center w-full group-hover:text-blue-600 transition-colors">{{ __('Contact') }}</a>
                         </li>
                     </ul>
                 </nav>
@@ -48,7 +47,7 @@
                         <button type="button" id="langToggleBtn"
                             class="inline-flex items-center gap-2 whitespace-nowrap rounded-radius border border-outline bg-BG-IExxass px-3 py-2 text-[12px] text-white rounded-3xl font-medium tracking-wide transition hover:opacity-75 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-outline-strong text-on-surface dark:text-on-surface-dark"
                             aria-haspopup="true" aria-expanded="false">
-                            ID/EN
+                            {{ strtoupper(app()->getLocale()) }}
                             <svg aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
                                 class="size-3 rotate-0 transition-transform duration-300" id="langToggleIcon">

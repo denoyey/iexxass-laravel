@@ -214,4 +214,8 @@ return [
 
     'partitioned' => env('SESSION_PARTITIONED_COOKIE', false),
 
+
+    'idle_timeout_enabled' => env('IDLE_TIMEOUT_ENABLED', false),
+    'idle_timeout_minutes' => env('IDLE_TIMEOUT_MINUTES', 5),
+
 ];

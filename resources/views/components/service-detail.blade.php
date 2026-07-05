@@ -13,23 +13,22 @@
     <div class="container mx-auto px-6 md:px-12 lg:px-20">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
 
-            <!-- Elegant Image Column -->
-            <div
-                class="{{ $reverse ? 'lg:order-2 order-1' : 'order-1' }} service-anim relative service-image-container cursor-pointer">
-                <!-- Ambient Hover Glow -->
-                <div class="image-glow absolute -inset-4 bg-blue-500/20 rounded-md blur-xl opacity-0">
-                </div>
+            @if ($image)
                 <div
-                    class="relative rounded-md overflow-hidden border border-white/10 shadow-2xl h-[300px] sm:h-[400px] lg:h-[600px] xl:h-[650px]">
-                    <img src="{{ asset($image) }}" class="service-img w-full h-full object-cover transform"
-                        alt="{{ $title }}" loading="lazy">
+                    class="{{ $reverse ? 'lg:order-2 order-1' : 'order-1' }} service-anim relative service-image-container cursor-pointer">
+                    <div class="image-glow absolute -inset-4 bg-blue-500/20 rounded-md blur-xl opacity-0">
+                    </div>
                     <div
-                        class="absolute inset-0 bg-linear-to-t from-[#050B65]/90 via-transparent to-transparent opacity-80 pointer-events-none">
+                        class="relative rounded-md overflow-hidden border border-white/10 shadow-2xl h-[300px] sm:h-[400px] lg:h-[600px] xl:h-[650px]">
+                        <img src="{{ asset($image) }}" class="service-img w-full h-full object-cover transform"
+                            alt="{{ $title }}" loading="lazy">
+                        <div
+                            class="absolute inset-0 bg-linear-to-t from-[#050B65]/90 via-transparent to-transparent opacity-80 pointer-events-none">
+                        </div>
                     </div>
                 </div>
-            </div>
+            @endif
 
-            <!-- Content Column -->
             <div class="{{ $reverse ? 'lg:order-1 order-2' : 'order-2' }} text-white font-AbhayaLibre">
                 <h1 class="service-anim text-[32px] md:text-[40px] lg:text-[50px] font-bold leading-tight mb-4 md:mb-6">
                     {{ $title }}</h1>
@@ -45,12 +44,12 @@
                     <div class="flex flex-col mb-4 md:mb-6">
                         <h2
                             class="service-anim text-[20px] md:text-[24px] lg:text-[28px] font-semibold mb-6 md:mb-8 text-blue-300">
-                            {{ __('message.service.why') }}
+                            {{ __('Why Choose Us') }}
                         </h2>
 
                         <!-- Custom Premium List with Scrollable Container -->
                         <div
-                            class="service-anim max-h-[280px] md:max-h-[320px] overflow-y-auto pr-4 -mr-4 
+                            class="service-anim lenis-auto-prevent max-h-[280px] md:max-h-[320px] overflow-y-auto pr-4 -mr-4 
                                     [&::-webkit-scrollbar]:w-1! 
                                     [&::-webkit-scrollbar-track]:bg-transparent! 
                                     [&::-webkit-scrollbar-thumb]:bg-blue-400/30! [&::-webkit-scrollbar-thumb]:rounded-full! hover:[&::-webkit-scrollbar-thumb]:bg-blue-400/60!">
@@ -76,11 +75,21 @@
                         @if ($price)
                             <div class="w-full sm:w-auto text-left flex-1 min-w-[200px]">
                                 <span
-                                    class="block text-[11px] md:text-sm text-blue-300 uppercase tracking-[3px] mb-1 sm:mb-2">Starting
-                                    From</span>
+                                    class="block text-[11px] md:text-sm text-blue-300 uppercase tracking-[3px] mb-1 sm:mb-2">{{ __('Starting From') }}</span>
+                                @php
+                                    $rawPrice = trim(
+                                        str_replace(['Start From', 'Start from', 'Rp.', 'Rp'], '', $price),
+                                    );
+                                    $cleanPrice = str_replace('.', '', $rawPrice);
+                                    if (is_numeric($cleanPrice) && preg_match('/^[\d.]+$/', $rawPrice)) {
+                                        $formattedPrice = 'Rp. ' . number_format((float) $cleanPrice, 0, ',', '.');
+                                    } else {
+                                        $formattedPrice = str_replace(['Start From ', 'Start from '], '', $price);
+                                    }
+                                @endphp
                                 <span
                                     class="text-[24px] sm:text-[26px] md:text-[32px] lg:text-[24px] xl:text-[32px] font-bold text-white tracking-wide block whitespace-nowrap">
-                                    {{ str_replace(['Start From ', 'Start from '], '', $price) }}
+                                    {{ $formattedPrice }}
                                 </span>
                             </div>
                         @endif

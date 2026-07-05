@@ -53,7 +53,7 @@
                         </svg>
                     </x-cta-whatsapp>
 
-                    <a href="https://www.facebook.com/username" target="_blank"
+                    <a href="https://www.facebook.com/username" target="_blank" aria-label="Facebook"
                         class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-300 hover:bg-blue-500/20 hover:text-white hover:border-blue-400/50 transition-all duration-300 group">
                         <svg class="w-4 h-4 group-hover:scale-110 transition-transform" fill="currentColor"
                             viewBox="0 0 320 512">
@@ -62,7 +62,7 @@
                         </svg>
                     </a>
 
-                    <a href="https://www.tiktok.com/@username" target="_blank"
+                    <a href="https://www.tiktok.com/@username" target="_blank" aria-label="TikTok"
                         class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-300 hover:bg-blue-500/20 hover:text-white hover:border-blue-400/50 transition-all duration-300 group">
                         <svg class="w-4 h-4 group-hover:scale-110 transition-transform" fill="currentColor"
                             viewBox="0 0 448 512">
@@ -75,47 +75,48 @@
 
             <!-- Col 2: Perusahaan (Span 2) -->
             <div class="col-span-1 lg:col-span-2 flex flex-col">
-                <h3 class="text-blue-300 uppercase tracking-[3px] text-[10px] sm:text-xs font-semibold mb-6">Perusahaan
+                <h3 class="text-blue-300 uppercase tracking-[3px] text-[10px] sm:text-xs font-semibold mb-6">
+                    {{ __('Company') }}
                 </h3>
                 <div class="flex flex-col items-start gap-3">
-                    <a href="javascript:void(0)" data-target="home"
+                    <a href="#home" data-target="home"
                         class="menu-link group relative flex items-center text-gray-400 hover:text-white focus:text-white focus:outline-none transition-colors duration-300 text-[15px]">
                         <span
                             class="absolute left-0 w-1.5 h-1.5 rounded-full bg-blue-400 opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-all duration-300 scale-0 group-hover:scale-100 group-focus:scale-100"></span>
                         <span
-                            class="transition-transform duration-300 group-hover:translate-x-4 group-focus:translate-x-4">Home</span>
+                            class="transition-transform duration-300 group-hover:translate-x-4 group-focus:translate-x-4">{{ __('Home') }}</span>
                     </a>
-                    <a href="javascript:void(0)" data-target="about-us"
+                    <a href="#about-us" data-target="about-us"
                         class="menu-link group relative flex items-center text-gray-400 hover:text-white focus:text-white focus:outline-none transition-colors duration-300 text-[15px]">
                         <span
                             class="absolute left-0 w-1.5 h-1.5 rounded-full bg-blue-400 opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-all duration-300 scale-0 group-hover:scale-100 group-focus:scale-100"></span>
                         <span
-                            class="transition-transform duration-300 group-hover:translate-x-4 group-focus:translate-x-4">About
-                            Us</span>
+                            class="transition-transform duration-300 group-hover:translate-x-4 group-focus:translate-x-4">{{ __('About Us') }}</span>
                     </a>
-                    <a href="javascript:void(0)" data-target="service"
+                    <a href="#service" data-target="service"
                         class="menu-link group relative flex items-center text-gray-400 hover:text-white focus:text-white focus:outline-none transition-colors duration-300 text-[15px]">
                         <span
                             class="absolute left-0 w-1.5 h-1.5 rounded-full bg-blue-400 opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-all duration-300 scale-0 group-hover:scale-100 group-focus:scale-100"></span>
                         <span
-                            class="transition-transform duration-300 group-hover:translate-x-4 group-focus:translate-x-4">Service</span>
+                            class="transition-transform duration-300 group-hover:translate-x-4 group-focus:translate-x-4">{{ __('Service') }}</span>
                     </a>
-                    <a href="javascript:void(0)" data-target="contact"
+                    <a href="#contact" data-target="contact"
                         class="menu-link group relative flex items-center text-gray-400 hover:text-white focus:text-white focus:outline-none transition-colors duration-300 text-[15px]">
                         <span
                             class="absolute left-0 w-1.5 h-1.5 rounded-full bg-blue-400 opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-all duration-300 scale-0 group-hover:scale-100 group-focus:scale-100"></span>
                         <span
-                            class="transition-transform duration-300 group-hover:translate-x-4 group-focus:translate-x-4">Contact</span>
+                            class="transition-transform duration-300 group-hover:translate-x-4 group-focus:translate-x-4">{{ __('Contact') }}</span>
                     </a>
                 </div>
             </div>
 
             <!-- Col 3: We Provide (Span 3) -->
             <div class="col-span-1 lg:col-span-3 flex flex-col">
-                <h3 class="text-blue-300 uppercase tracking-[3px] text-[10px] sm:text-xs font-semibold mb-6">We Provide
+                <h3 class="text-blue-300 uppercase tracking-[3px] text-[10px] sm:text-xs font-semibold mb-6">
+                    {{ __('We Provide') }}
                 </h3>
                 <div class="flex flex-col items-start gap-3">
-                    <a href="javascript:void(0)" data-target="web-dev"
+                    <a href="#web-dev" data-target="web-dev"
                         class="menu-link group relative flex items-center text-gray-400 hover:text-white focus:text-white focus:outline-none transition-colors duration-300 text-[15px]">
                         <span
                             class="absolute left-0 w-1.5 h-1.5 rounded-full bg-blue-400 opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-all duration-300 scale-0 group-hover:scale-100 group-focus:scale-100"></span>
@@ -123,7 +124,7 @@
                             class="transition-transform duration-300 group-hover:translate-x-4 group-focus:translate-x-4">Web
                             Developer</span>
                     </a>
-                    <a href="javascript:void(0)" data-target="network"
+                    <a href="#network" data-target="network"
                         class="menu-link group relative flex items-center text-gray-400 hover:text-white focus:text-white focus:outline-none transition-colors duration-300 text-[15px]">
                         <span
                             class="absolute left-0 w-1.5 h-1.5 rounded-full bg-blue-400 opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-all duration-300 scale-0 group-hover:scale-100 group-focus:scale-100"></span>
@@ -132,7 +133,7 @@
                             And
                             CCTV</span>
                     </a>
-                    <a href="javascript:void(0)" data-target="it-consultant"
+                    <a href="#it-consultant" data-target="it-consultant"
                         class="menu-link group relative flex items-center text-gray-400 hover:text-white focus:text-white focus:outline-none transition-colors duration-300 text-[15px]">
                         <span
                             class="absolute left-0 w-1.5 h-1.5 rounded-full bg-blue-400 opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-all duration-300 scale-0 group-hover:scale-100 group-focus:scale-100"></span>
@@ -145,7 +146,7 @@
 
             <!-- Col 4: Map (Span 3) -->
             <div class="col-span-2 md:col-span-1 lg:col-span-3 flex flex-col">
-                <h3 class="text-blue-300 uppercase tracking-[3px] text-xs font-semibold mb-6">Location</h3>
+                <h3 class="text-blue-300 uppercase tracking-[3px] text-xs font-semibold mb-6">{{ __('Location') }}</h3>
                 <div
                     class="w-full h-[230px] md:h-[230px] rounded-sm overflow-hidden border border-white/10 shadow-[0_0_15px_rgba(0,0,0,0.5)] relative group">
                     <div
@@ -161,10 +162,10 @@
         <div
             class="w-full pt-6 md:pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-0 md:gap-4">
             <p class="text-gray-500 text-[13px]">
-                &copy; {{ date('Y') }} I'Exxas. All Rights Reserved.
+                &copy; {{ date('Y') }} I'Exxas. {{ __('All Rights Reserved.') }}
             </p>
             <p class="text-gray-500 text-[13px]">
-                Developed by <a href="/"
+                {{ __('Developed by') }} <a href="/"
                     class="text-blue-400 font-semibold tracking-wide hover:underline">I'Exxass</a>.
             </p>
         </div>

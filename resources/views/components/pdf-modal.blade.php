@@ -15,7 +15,7 @@
                             d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253">
                         </path>
                     </svg>
-                    E-Book Portofolio
+                    {{ __('E-Book Portofolio') }}
                 </h3>
                 <div class="flex items-center gap-2 md:gap-3">
                     <a href="{{ $downloadUrl }}"
@@ -36,13 +36,12 @@
                 </div>
             </div>
 
-            <!-- PDF Viewer -->
             <div class="flex-1 w-full bg-gray-200 overflow-y-auto" style="-webkit-overflow-scrolling: touch;">
                 <div id="pdf-render-container-{{ $id }}"
-                    class="flex flex-col items-center gap-4 p-4 min-h-full">
-                    <!-- Loading Spinner -->
+                    class="pdf-viewer-instance flex flex-col items-center gap-4 p-4 min-h-full"
+                    data-pdf-url="{{ $pdfUrl }}">
                     <div id="pdf-loader-{{ $id }}"
-                        class="flex flex-col items-center justify-center py-20 text-gray-500">
+                        class="pdf-loader flex flex-col items-center justify-center py-20 text-gray-500">
                         <svg class="animate-spin h-8 w-8 mb-4 text-BG-IExxass" xmlns="http://www.w3.org/2000/svg"
                             fill="none" viewBox="0 0 24 24">
                             <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor"
@@ -58,49 +57,3 @@
         </div>
     </div>
 </div>
-
-@push('scripts')
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const url = '{{ $pdfUrl }}';
-            const container = document.getElementById('pdf-render-container-{{ $id }}');
-            const loader = document.getElementById('pdf-loader-{{ $id }}');
-
-            if (!container) return;
-
-            const pdfjsLib = window['pdfjs-dist/build/pdf'];
-            pdfjsLib.GlobalWorkerOptions.workerSrc =
-                'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
-
-            pdfjsLib.getDocument(url).promise.then(function(pdfDoc) {
-                loader.style.display = 'none';
-
-                for (let pageNum = 1; pageNum <= pdfDoc.numPages; pageNum++) {
-                    const canvas = document.createElement('canvas');
-                    canvas.id = 'pdf-page-{{ $id }}-' + pageNum;
-                    canvas.className = 'w-full max-w-3xl rounded-sm shadow-md bg-white';
-                    container.appendChild(canvas);
-
-                    pdfDoc.getPage(pageNum).then(function(page) {
-                        // Use scale 2.0 for high DPI / Retina crispness
-                        const viewport = page.getViewport({
-                            scale: 2.0
-                        });
-                        canvas.height = viewport.height;
-                        canvas.width = viewport.width;
-
-                        const renderContext = {
-                            canvasContext: canvas.getContext('2d'),
-                            viewport: viewport
-                        };
-                        page.render(renderContext);
-                    });
-                }
-            }).catch(function(error) {
-                loader.innerHTML = '<p class="text-red-500 font-bold">Gagal memuat dokumen PDF.</p>';
-                console.error('Error loading PDF:', error);
-            });
-        });
-    </script>
-@endpush

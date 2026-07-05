@@ -104,12 +104,6 @@ export function initScrollAnimations() {
                 });
             }
         });
-
-        // Hover animations
-        cards.forEach(card => {
-            card.addEventListener("mouseenter", () => gsap.to(card, { y: -8, duration: 0.3, ease: "power2.out" }));
-            card.addEventListener("mouseleave", () => gsap.to(card, { y: 0, duration: 0.3, ease: "power2.out" }));
-        });
     }
 
     // GSAP Scroll Animation for Quote Elements

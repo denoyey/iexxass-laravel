@@ -3,7 +3,7 @@
 
     <!-- Image Background with Black Overlay -->
     <div class="absolute inset-0 bg-cover bg-center bg-no-repeat pointer-events-none"
-        style="background-image: url('{{ asset('src/img/bg-footer.png') }}');">
+        style="background-image: url('{{ asset('src/img/bg-footer.webp') }}');">
     </div>
     <div class="absolute inset-0 bg-black/30 pointer-events-none"></div>
 
@@ -19,13 +19,12 @@
             <!-- Left: Typography & Info -->
             <div class="section-header text-left pt-10">
                 <h1
-                    class="text-[36px] md:text-[65px] lg:text-[50px] xl:text-[65px] 2xl:text-[80px] text-white font-bold leading-[1.05] mb-6 md:mb-8">
-                    Let's connect.
+                    class="text-[36px] md:text-[65px] lg:text-[40px] xl:text-[50px] 2xl:text-[60px] text-white font-bold leading-[1.05] mb-6 md:mb-8">
+                    {{ __("Let's connect.") }}
                 </h1>
                 <p
-                    class="text-gray-300 text-[15px] md:text-[22px] lg:text-[16px] xl:text-[18px] 2xl:text-[22px] leading-relaxed max-w-lg font-light">
-                    We would love to hear from you. Whether you have a question about our services or need assistance
-                    with your project, our team is ready to help.
+                    class="text-gray-300 text-[15px] md:text-[22px] lg:text-[15px] xl:text-[16px] 2xl:text-[18px] leading-relaxed max-w-lg font-light">
+                    {{ __('We would love to hear from you. Whether you have a question about our services or need assistance with your project, our team is ready to help.') }}
                 </p>
             </div>
 
@@ -40,7 +39,7 @@
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
                             <div class="relative group">
                                 <label for="name"
-                                    class="block text-[10px] md:text-[12px] font-semibold tracking-[2px] text-gray-400 uppercase mb-1 md:mb-2 transition-colors group-focus-within:text-white">Name</label>
+                                    class="block text-[10px] md:text-[12px] font-semibold tracking-[2px] text-gray-400 uppercase mb-1 md:mb-2 transition-colors group-focus-within:text-white">{{ __('Name') }}</label>
                                 <input type="text" id="name" name="name"
                                     class="w-full bg-transparent border-0 border-b border-white/30 px-0 py-1 md:py-1.5 text-white text-[14px] md:text-[16px] placeholder-transparent focus:outline-none focus:ring-0 focus:border-white transition-all duration-300"
                                     placeholder="John Doe" required autocomplete="name" />
@@ -48,8 +47,7 @@
 
                             <div class="relative group">
                                 <label for="email"
-                                    class="block text-[10px] md:text-[12px] font-semibold tracking-[2px] text-gray-400 uppercase mb-1 md:mb-2 transition-colors group-focus-within:text-white">Email
-                                    Address</label>
+                                    class="block text-[10px] md:text-[12px] font-semibold tracking-[2px] text-gray-400 uppercase mb-1 md:mb-2 transition-colors group-focus-within:text-white">{{ __('Email Address') }}</label>
                                 <input type="email" id="email" name="email"
                                     class="w-full bg-transparent border-0 border-b border-white/30 px-0 py-1 md:py-1.5 text-white text-[14px] md:text-[16px] placeholder-transparent focus:outline-none focus:ring-0 focus:border-white transition-all duration-300"
                                     placeholder="john@example.com" required autocomplete="email" />
@@ -59,7 +57,7 @@
                         <!-- Subject -->
                         <div class="relative group">
                             <label for="subject"
-                                class="block text-[10px] md:text-[12px] font-semibold tracking-[2px] text-gray-400 uppercase mb-1 md:mb-2 transition-colors group-focus-within:text-white">Subject</label>
+                                class="block text-[10px] md:text-[12px] font-semibold tracking-[2px] text-gray-400 uppercase mb-1 md:mb-2 transition-colors group-focus-within:text-white">{{ __('Subject') }}</label>
                             <input type="text" id="subject" name="subject"
                                 class="w-full bg-transparent border-0 border-b border-white/30 px-0 py-1 md:py-1.5 text-white text-[14px] md:text-[16px] placeholder-transparent focus:outline-none focus:ring-0 focus:border-white transition-all duration-300"
                                 placeholder="How can we help?" required autocomplete="off" />
@@ -68,7 +66,7 @@
                         <!-- Message -->
                         <div class="relative group">
                             <label for="message"
-                                class="block text-[10px] md:text-[12px] font-semibold tracking-[2px] text-gray-400 uppercase mb-1 md:mb-2 transition-colors group-focus-within:text-white">Message</label>
+                                class="block text-[10px] md:text-[12px] font-semibold tracking-[2px] text-gray-400 uppercase mb-1 md:mb-2 transition-colors group-focus-within:text-white">{{ __('Message') }}</label>
                             <textarea id="message" rows="1" name="message"
                                 class="w-full bg-transparent border-0 border-b border-white/30 px-0 py-1 md:py-1.5 text-white text-[14px] md:text-[16px] placeholder-transparent focus:outline-none focus:ring-0 focus:border-white transition-all duration-300 resize-none"
                                 placeholder="Write your message here..." required autocomplete="off"></textarea>
@@ -85,8 +83,8 @@
                         <!-- Submit Button -->
                         <div class="text-left mt-1">
                             <button type="submit" id="submitBtn"
-                                class="w-full sm:w-auto inline-block border border-white bg-transparent text-white hover:bg-white hover:text-BG-IExxass font-bold text-[11px] md:text-[12px] tracking-[3px] uppercase px-8 py-3 md:px-10 md:py-3 rounded-none transition-all duration-300">
-                                Send Message
+                                class="w-full sm:w-auto inline-block border border-white bg-transparent text-white hover:bg-white hover:text-BG-IExxass font-bold text-[11px] md:text-[12px] lg:text-[10px] xl:text-[11px] tracking-[3px] uppercase px-8 py-3 md:px-10 md:py-3 lg:px-6 lg:py-2 xl:px-8 xl:py-2.5 rounded-none transition-all duration-300">
+                                {{ __('Send Message') }}
                             </button>
                         </div>
                     </div>
@@ -96,7 +94,3 @@
         </div>
     </div>
 </div>
-
-@push('scripts')
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-@endpush

@@ -1,4 +1,6 @@
 @import 'tailwindcss';
+/* --- Admin Template Imports --- */
+@import './components/loading.css';
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
@@ -6,7 +8,14 @@
 @source '../**/*.js';
 
 @theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    /* Admin Template Colors (Matched to IExxass Public Theme) */
+    --color-primary: #030B7C;
+    --color-primary-dark: #020860;
+    --color-primary-light: #1e3a8a;
+    --color-secondary: #f1ac0b;
+    --color-secondary-dark: #d99800;
+    --color-grey: #b3b3b3;
+    --font-sans: 'Abhaya Libre', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
     --color-BG-IExxass: #030B7C;
     --color-BG-White: #FFFFFF;
@@ -64,6 +73,6 @@ input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
-    -webkit-text-fill-color: white !important;
+    -webkit-text-fill-color: #111827 !important;
     transition: background-color 5000s ease-in-out 0s;
 }

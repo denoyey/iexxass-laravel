@@ -84,6 +84,7 @@ if (hamburger && navbar) {
 // Smooth Scrolling Menu Links
 document.querySelectorAll('.menu-link').forEach(link => {
     link.addEventListener('click', function (e) {
+        e.preventDefault();
         const target = this.dataset.target;
         const section = document.getElementById(target);
 
