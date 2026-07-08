@@ -93,6 +93,17 @@ class ProjectController extends Controller
         return back()->with('success', 'Gambar galeri berhasil dihapus.');
     }
 
+    public function updateImage(Request $request, ProjectImage $image)
+    {
+        $request->validate([
+            'image' => 'required|image|mimes:jpeg,png,jpg,webp|max:2048',
+        ]);
+
+        $this->projectService->updateImage($image, $request->file('image'));
+
+        return back()->with('success', 'Gambar galeri berhasil diperbarui.');
+    }
+
     public function bulkDelete(Request $request)
     {
         $request->validate([

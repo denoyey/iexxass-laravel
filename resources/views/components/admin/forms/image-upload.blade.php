@@ -19,7 +19,7 @@
     <div class="image-preview-wrapper" data-target="{{ $id }}-preview">
 
         <div
-            class="border border-gray-200 rounded-md bg-white mb-4 shadow-sm flex flex-col sm:flex-row items-stretch overflow-hidden">
+            class="max-w-md border border-gray-200 rounded-md bg-white mb-4 shadow-sm flex flex-col sm:flex-row items-stretch overflow-hidden">
             <div class="flex-1 p-2.5 sm:p-3 flex flex-col justify-center">
                 <input type="file" id="{{ $id }}" name="{{ $name }}" accept="{{ $accept }}"
                     {{ $required && !$value ? 'required' : '' }}

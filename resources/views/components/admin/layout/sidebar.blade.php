@@ -58,7 +58,6 @@
                 </a>
 
                 @can('manage_about_us')
-                    <!-- About Us -->
                     <a href="{{ route('admin.about-us.edit') }}"
                         class="nav-item group flex items-center gap-3 px-3 py-2 rounded-md text-[13px] font-medium text-gray-700
                                hover:bg-primary/10 hover:text-primary transition-colors duration-150
@@ -70,25 +69,9 @@
                         </svg>
                         <span class="sidebar-label">About Us</span>
                     </a>
-
-                    <!-- E-Book Portofolio -->
-                    <a href="{{ route('admin.ebook.index') }}"
-                        class="nav-item group flex items-center gap-3 px-3 py-2 rounded-md text-[13px] font-medium text-gray-700
-                               hover:bg-primary/10 hover:text-primary transition-colors duration-150
-                               {{ request()->routeIs('admin.ebook.*') ? 'nav-active bg-primary/10 text-primary' : '' }}">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-[18px] h-[18px] shrink-0" fill="none"
-                            viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                        </svg>
-                        <span class="sidebar-label">E-Book Portofolio</span>
-                    </a>
                 @endcan
 
-
-
                 @can('manage_services')
-                    <!-- Our Services -->
                     <a href="{{ route('admin.services.header.index') }}"
                         class="nav-item group flex items-center gap-3 px-3 py-2 rounded-md text-[13px] font-medium text-gray-700
                                hover:bg-primary/10 hover:text-primary transition-colors duration-150
@@ -99,6 +82,32 @@
                                 d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
                         </svg>
                         <span class="sidebar-label">Our Services</span>
+                    </a>
+                @endcan
+
+                <a href="{{ route('admin.projects.index') }}"
+                    class="nav-item group flex items-center gap-3 px-3 py-2 rounded-md text-[13px] font-medium text-gray-700
+                           hover:bg-primary/10 hover:text-primary transition-colors duration-150
+                           {{ request()->routeIs('admin.projects.*') ? 'nav-active bg-primary/10 text-primary' : '' }}">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-[18px] h-[18px] shrink-0" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                    <span class="sidebar-label">Projects</span>
+                </a>
+
+                @can('manage_about_us')
+                    <a href="{{ route('admin.ebook.index') }}"
+                        class="nav-item group flex items-center gap-3 px-3 py-2 rounded-md text-[13px] font-medium text-gray-700
+                               hover:bg-primary/10 hover:text-primary transition-colors duration-150
+                               {{ request()->routeIs('admin.ebook.*') ? 'nav-active bg-primary/10 text-primary' : '' }}">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-[18px] h-[18px] shrink-0" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                        </svg>
+                        <span class="sidebar-label">E-Book Portofolio</span>
                     </a>
                 @endcan
             </div>

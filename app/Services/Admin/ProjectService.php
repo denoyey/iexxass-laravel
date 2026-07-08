@@ -3,6 +3,7 @@
 namespace App\Services\Admin;
 
 use App\Models\Project;
+use App\Models\ProjectImage;
 use App\Services\ImageUploadService;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
@@ -103,5 +104,18 @@ class ProjectService
 
             $project->delete();
         });
+    }
+
+    /**
+     * Update an individual gallery image.
+     */
+    public function updateImage(ProjectImage $image, $newFile): void
+    {
+        if ($image->image_path && Storage::disk('public')->exists($image->image_path)) {
+            Storage::disk('public')->delete($image->image_path);
+        }
+
+        $path = $this->imageService->uploadAndConvertToWebp($newFile, 'projects/gallery');
+        $image->update(['image_path' => $path]);
     }
 }
