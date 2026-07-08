@@ -21,7 +21,6 @@
             <div>
                 <span class="inline-flex rtl:flex-row-reverse shadow-sm rounded-md">
 
-
                     @if (!$paginator->onFirstPage())
                         <a href="{{ $paginator->previousPageUrl() }}" rel="prev" class="inline-flex items-center px-1.5 py-1.5 text-xs font-medium text-gray-500 bg-white border border-gray-300 leading-4 hover:text-gray-400 focus:outline-none focus:ring ring-gray-300 focus:border-blue-300 active:bg-gray-100 active:text-gray-500 transition ease-in-out duration-150 dark:bg-gray-800 dark:border-gray-600 dark:active:bg-gray-700 dark:focus:border-blue-800 dark:text-gray-300 dark:hover:bg-gray-900 dark:hover:text-gray-300 first:rounded-l-md last:rounded-r-md first:ml-0" aria-label="{{ __('pagination.previous') }}">
                             <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
@@ -30,7 +29,6 @@
                         </a>
                     @endif
 
-
                     @foreach ($elements as $element)
 
                         @if (is_string($element))
@@ -38,7 +36,6 @@
                                 {{ $element }}
                             </span>
                         @endif
-
 
                         @if (is_array($element))
                             @foreach ($element as $page => $url)
@@ -54,7 +51,6 @@
                             @endforeach
                         @endif
                     @endforeach
-
 
                     @if ($paginator->hasMorePages())
                         <a href="{{ $paginator->nextPageUrl() }}" rel="next" class="inline-flex items-center px-1.5 py-1.5 -ml-px text-xs font-medium text-gray-500 bg-white border border-gray-300 leading-4 hover:text-gray-400 focus:outline-none focus:ring ring-gray-300 focus:border-blue-300 active:bg-gray-100 active:text-gray-500 transition ease-in-out duration-150 dark:bg-gray-800 dark:border-gray-600 dark:active:bg-gray-700 dark:focus:border-blue-800 dark:text-gray-300 dark:hover:bg-gray-900 dark:hover:text-gray-300 first:rounded-l-md last:rounded-r-md first:ml-0" aria-label="{{ __('pagination.next') }}">

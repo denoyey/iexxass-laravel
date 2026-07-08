@@ -3,7 +3,6 @@ import { ModalController } from '../../utils/modal-controller';
 
 export function bindModalAnimations() {
 
-
     const originalOpen = ModalController.prototype.open;
     const originalClose = ModalController.prototype.close;
 
@@ -15,7 +14,6 @@ export function bindModalAnimations() {
         const content = target.querySelector('.relative.bg-white');
 
         gsap.killTweensOf([target, backdrop, content]);
-
 
         gsap.set(target, { autoAlpha: 1 });
 
@@ -50,7 +48,6 @@ export function bindModalAnimations() {
         if (content) {
             gsap.to(content, { autoAlpha: 0, scale: 0.95, y: 15, duration: 0.2, ease: 'power2.in' });
         }
-
 
         gsap.to(target, {
             autoAlpha: 0,

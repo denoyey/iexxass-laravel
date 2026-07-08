@@ -3,7 +3,6 @@
         <h2 class="text-[15px] font-bold text-gray-800">Hak Akses (Permissions)</h2>
     </div>
 
-
     <div class="flex flex-wrap items-center gap-2 mb-6 permission-tabs">
         <button type="button" data-target="resources"
             class="tab-btn active px-4 py-2 bg-primary/10 text-primary rounded-md text-[13px] font-bold flex items-center gap-2 border border-primary/20 transition-colors">
@@ -20,7 +19,6 @@
             </button>
         @endif
     </div>
-
 
     <div id="section-resources"
         class="permission-section {{ isset($readonly) && $readonly ? 'pointer-events-none opacity-80' : '' }}">
@@ -62,7 +60,6 @@
             @endforeach
         </div>
     </div>
-
 
     @if (count($customPermissions) > 0)
         <div id="section-custom"

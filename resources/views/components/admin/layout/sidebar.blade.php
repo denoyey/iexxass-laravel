@@ -34,7 +34,6 @@
     <nav
         class="flex-1 overflow-y-auto overflow-x-hidden overscroll-contain py-3 px-3 scrollbar-thin hover:scrollbar-thumb-gray-300">
 
-
         <div class="sidebar-section mb-3" data-section="main">
             <button type="button"
                 class="section-toggle w-full flex items-center justify-between px-2 pb-2 pt-1 text-[11px] font-semibold text-gray-600 uppercase tracking-widest hover:text-gray-800 transition-colors cursor-pointer group">
@@ -86,31 +85,7 @@
                     </a>
                 @endcan
 
-                <!-- File Upload Demo -->
-                <a href="{{ route('admin.file-upload-examples.index') }}"
-                    class="nav-item group flex items-center gap-3 px-3 py-2 rounded-md text-[13px] font-medium text-gray-700
-                           hover:bg-primary/10 hover:text-primary transition-colors duration-150
-                           {{ request()->routeIs('admin.file-upload-examples.*') ? 'nav-active bg-primary/10 text-primary' : '' }}">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-[18px] h-[18px] shrink-0" fill="none"
-                        viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
-                    </svg>
-                    <span class="sidebar-label">File Upload Demo</span>
-                </a>
 
-                <!-- Multi Image Gallery -->
-                <a href="{{ route('admin.multi-upload-examples.index') }}"
-                    class="nav-item group flex items-center gap-3 px-3 py-2 rounded-md text-[13px] font-medium text-gray-700
-                           hover:bg-primary/10 hover:text-primary transition-colors duration-150
-                           {{ request()->routeIs('admin.multi-upload-examples.*') ? 'nav-active bg-primary/10 text-primary' : '' }}">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-[18px] h-[18px] shrink-0" fill="none"
-                        viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                    </svg>
-                    <span class="sidebar-label">Multi Image Gallery</span>
-                </a>
 
                 @can('manage_services')
                     <!-- Our Services -->

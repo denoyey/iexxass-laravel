@@ -40,7 +40,6 @@
                     <x-admin.forms.form-select name="role" label="Role" :required="true" :options="$roles->pluck('name', 'name')->toArray()" />
                 </div>
 
-
                 <div class="space-y-5">
                     <x-admin.forms.form-input type="password" name="password" label="Password" :required="true"
                         placeholder="Minimal 8 karakter" autocomplete="new-password" />

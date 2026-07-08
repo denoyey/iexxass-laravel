@@ -34,7 +34,6 @@
         </a>
     </div>
 
-
     <div class="bg-white border border-gray-200 rounded-md shadow-sm p-5 mb-6 flex flex-col md:flex-row md:items-center gap-6">
         <div class="flex-1">
             <div class="text-[12px] font-medium text-gray-500 mb-1">Nama Role</div>
@@ -47,7 +46,6 @@
             </span>
         </div>
     </div>
-
 
     <div class="bg-white border border-gray-200 rounded-md shadow-sm p-5 mb-8">
         @include('pages.admin.access-management.roles.form-matrix', ['readonly' => true])

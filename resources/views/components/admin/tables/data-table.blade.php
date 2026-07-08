@@ -78,7 +78,6 @@
         </div>
     </div>
 
-
     @if (isset($bulkActions))
         <div
             class="bulk-actions-container hidden bg-primary/10 border-b border-gray-100 px-4 py-2.5 items-center justify-between gap-3 transition-all duration-200">

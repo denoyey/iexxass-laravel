@@ -11,10 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('multi_upload_examples', function (Blueprint $table) {
-            $table->id('id_multi_upload');
-            $table->string('image_path');
-            $table->string('alt_text')->nullable();
+        Schema::create('projects', function (Blueprint $table) {
+            $table->id();
+            $table->string('title');
+            $table->string('category')->nullable();
+            $table->string('thumbnail');
+            $table->text('description')->nullable();
+            $table->integer('order_column')->default(0);
             $table->timestamps();
         });
     }
@@ -24,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('multi_upload_examples');
+        Schema::dropIfExists('projects');
     }
 };

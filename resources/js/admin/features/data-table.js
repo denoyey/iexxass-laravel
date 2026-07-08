@@ -97,7 +97,6 @@ class DataTable {
 
                 this.initSelectAllState();
 
-
                 document.querySelectorAll('.data-table-wrapper').forEach(w => this.updateBulkActionsUI(w));
 
                 if (tbody) tbody.style.opacity = '1';

@@ -39,7 +39,6 @@ class DeleteModalManager {
             if (this.formModal) {
                 this.formModal.setAttribute('action', action);
 
-
                 this.formModal.querySelectorAll('input.copied-input').forEach(el => el.remove());
 
                 if (inputs) {

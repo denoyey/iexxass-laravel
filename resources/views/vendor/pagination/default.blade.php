@@ -12,13 +12,11 @@
                 </li>
             @endif
 
-
             @foreach ($elements as $element)
 
                 @if (is_string($element))
                     <li class="disabled" aria-disabled="true"><span>{{ $element }}</span></li>
                 @endif
-
 
                 @if (is_array($element))
                     @foreach ($element as $page => $url)
@@ -30,7 +28,6 @@
                     @endforeach
                 @endif
             @endforeach
-
 
             @if ($paginator->hasMorePages())
                 <li>

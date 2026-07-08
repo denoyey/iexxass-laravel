@@ -69,7 +69,6 @@
                     @endrole
                 </div>
 
-
                 @role('super_admin')
                 <div class="space-y-5">
                     <x-admin.forms.form-input

@@ -29,7 +29,6 @@
         <form action="{{ route('admin.roles.store') }}" method="POST" class="space-y-6">
             @csrf
 
-
             <div class="bg-white border border-gray-200 rounded-md shadow-sm p-4 sm:p-5 flex flex-col xl:flex-row xl:items-center justify-between gap-4 sm:gap-6">
                 <div class="flex-1 w-full xl:max-w-xl">
                     <x-admin.forms.form-input
@@ -53,7 +52,6 @@
                     </div>
                 </div>
             </div>
-
 
             <div class="bg-white border border-gray-200 rounded-md shadow-sm p-5">
                 @include('pages.admin.access-management.roles.form-matrix')

@@ -5,11 +5,9 @@
 
     <div class="relative bg-white rounded-md shadow-2xl w-full max-w-4xl max-h-[90vh] flex flex-col m-4">
 
-
         <div class="px-6 py-4 border-b border-gray-100 flex items-center justify-between">
             <h3 class="text-lg font-semibold text-gray-800">Edit Gambar</h3>
         </div>
-
 
         <div
             class="p-4 bg-gray-50 flex-1 overflow-hidden flex items-center justify-center min-h-[300px] lg:min-h-[500px]">
@@ -18,10 +16,8 @@
             </div>
         </div>
 
-
         <div
             class="px-6 py-4 border-t border-gray-100 bg-white rounded-b-md flex flex-col sm:flex-row items-center justify-between gap-4">
-
 
             <div class="flex items-center gap-1 bg-gray-100 p-1 rounded-md">
                 <button type="button"
@@ -81,7 +77,6 @@
                     </svg>
                 </button>
             </div>
-
 
             <div class="flex items-center gap-2 w-full sm:w-auto">
                 <button type="button" id="btn-cancel-cropper"

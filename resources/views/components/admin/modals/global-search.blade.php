@@ -2,11 +2,9 @@
 
     <div id="global-search-backdrop" class="fixed inset-0 bg-black/60 transition-opacity"></div>
 
-
     <div id="global-search-wrapper" class="fixed inset-0 z-10 overflow-y-auto p-2 sm:p-6 md:p-20">
         <div id="global-search-panel"
             class="mx-auto max-w-2xl transform divide-y divide-gray-100 overflow-hidden rounded-md bg-white shadow-2xl transition-all opacity-0 scale-95 flex flex-col max-h-[95vh] sm:max-h-[80vh]">
-
 
             <div class="relative flex items-center px-3 py-2 sm:px-4 sm:py-3 shrink-0">
                 <svg class="pointer-events-none absolute left-3 sm:left-4 h-4 w-4 sm:h-5 sm:w-5 text-gray-400"
@@ -25,7 +23,6 @@
                 </div>
             </div>
 
-
             <div id="global-search-loading" class="hidden px-6 py-10 text-center shrink-0">
                 <svg class="animate-spin mx-auto h-6 w-6 text-primary" xmlns="http://www.w3.org/2000/svg" fill="none"
                     viewBox="0 0 24 24">
@@ -38,11 +35,9 @@
                 <p class="mt-4 text-[11px] sm:text-xs text-gray-500">Mencari data...</p>
             </div>
 
-
             <div id="global-search-empty" class="px-6 py-16 text-center text-[11px] sm:text-xs sm:px-14 shrink-0">
                 <p class="text-gray-500">Tidak ada pencarian terbaru</p>
             </div>
-
 
             <div id="global-search-no-results"
                 class="hidden px-6 py-14 text-center text-[11px] sm:text-xs sm:px-14 shrink-0">
@@ -55,7 +50,6 @@
                 <p class="mt-2 text-gray-500">Tidak ada data yang cocok untuk "<span id="search-query-text"
                         class="font-medium text-gray-700"></span>".</p>
             </div>
-
 
             <ul id="global-search-results"
                 class="hidden overflow-y-auto py-2 text-[11px] sm:text-xs text-gray-800 flex-1 [&::-webkit-scrollbar]:w-1! [&::-webkit-scrollbar-thumb]:bg-gray-300! [&::-webkit-scrollbar-thumb]:rounded-full! hover:[&::-webkit-scrollbar-thumb]:bg-gray-400! [&::-webkit-scrollbar-track]:bg-transparent!"
@@ -86,7 +80,6 @@
                     </a>
                 </li>
             </template>
-
 
             <div class="hidden sm:flex shrink-0 items-center justify-end bg-gray-50 px-4 py-2 border-t border-gray-100">
                 <span class="text-[10px] text-gray-400 font-medium">Navigasi menggunakan panah </span>

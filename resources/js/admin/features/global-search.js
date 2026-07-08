@@ -23,7 +23,6 @@ export function initGlobalSearch() {
     function openModal() {
         modal.classList.remove('hidden');
 
-
         void modal.offsetWidth;
 
         backdrop.classList.replace('opacity-0', 'opacity-100');
@@ -98,10 +97,8 @@ export function initGlobalSearch() {
     function renderResults(data, query) {
         resultsList.innerHTML = '';
 
-
         const safeQuery = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
         const regex = new RegExp(`(${safeQuery})`, 'gi');
-
 
         const groupedData = data.reduce((acc, item) => {
             if (!acc[item.type]) acc[item.type] = [];
@@ -153,7 +150,6 @@ export function initGlobalSearch() {
             openModal();
         }
 
-
         if (!modal.classList.contains('hidden')) {
 
             if (e.key === 'Escape') {
@@ -200,15 +196,12 @@ export function initGlobalSearch() {
             return;
         }
 
-
         showState('loading');
-
 
         debounceTimer = setTimeout(() => {
             performSearch(query);
         }, 300);
     });
-
 
     backdrop.classList.add('opacity-0');
 }

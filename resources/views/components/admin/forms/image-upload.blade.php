@@ -68,7 +68,6 @@
                     </svg>
                 </button>
 
-
                 <button type="button"
                     class="btn-crop-image edit-overlay absolute top-2 right-2 p-1 sm:p-1.5 bg-white/90 hover:bg-white text-gray-600 rounded-full shadow-md transition-colors items-center justify-center {{ $value ? 'flex' : 'hidden' }}"
                     title="Edit Gambar">

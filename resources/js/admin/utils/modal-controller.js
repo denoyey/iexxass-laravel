@@ -90,7 +90,6 @@ class ModalController {
         if (this.modal) {
             this.modal.classList.add(this.openClass);
 
-
             setTimeout(() => {
                 const focusEl = this.modal.querySelector('[autofocus]')
                              || this.modal.querySelector('[data-autofocus]')

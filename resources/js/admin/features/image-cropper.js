@@ -129,9 +129,7 @@ class ImageCropperManager {
         canvas.toBlob((blob) => {
             if (!blob) return;
 
-
             const file = new File([blob], this.originalFileName, { type: 'image/jpeg', lastModified: new Date().getTime() });
-
 
             const customCropEvent = new CustomEvent('image-cropped', {
                 bubbles: true,

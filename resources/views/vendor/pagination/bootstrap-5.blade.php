@@ -13,7 +13,6 @@
                     </li>
                 @endif
 
-
                 @if ($paginator->hasMorePages())
                     <li class="page-item">
                         <a class="page-link" href="{{ $paginator->nextPageUrl() }}" rel="next">@lang('pagination.next')</a>
@@ -52,13 +51,11 @@
                         </li>
                     @endif
 
-
                     @foreach ($elements as $element)
 
                         @if (is_string($element))
                             <li class="page-item disabled" aria-disabled="true"><span class="page-link">{{ $element }}</span></li>
                         @endif
-
 
                         @if (is_array($element))
                             @foreach ($element as $page => $url)
@@ -70,7 +67,6 @@
                             @endforeach
                         @endif
                     @endforeach
-
 
                     @if ($paginator->hasMorePages())
                         <li class="page-item">
