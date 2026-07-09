@@ -53,6 +53,9 @@
         <section id="service">
             @include('pages.public.services.index')
         </section>
+        <section id="projects">
+            @include('pages.public.projects.index')
+        </section>
         <section id="contact">
             @include('pages.public.contact.index')
         </section>

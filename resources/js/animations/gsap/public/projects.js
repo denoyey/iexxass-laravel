@@ -22,7 +22,6 @@ class PortfolioModal {
     }
 
     bindEvents() {
-Expose to window for inline onclick handlers in blade template
         window.openPortfolioModal = this.open.bind(this);
         window.closePortfolioModal = this.close.bind(this);
         window.portfolioNextImage = this.nextImage.bind(this);
@@ -34,7 +33,7 @@ Expose to window for inline onclick handlers in blade template
         this.currentPortfolio = project;
         this.currentImageIndex = 0;
 
-Populate Data
+        // Populate Data
         this.elements.title.innerText = project.title;
         this.elements.category.innerText = project.category;
         this.elements.desc.innerText = project.description;
@@ -48,14 +47,14 @@ Populate Data
             this.elements.controls.classList.add('hidden');
         }
 
-Display before animation
+        // Display before animation
         this.elements.overlay.style.display = 'flex';
 
-Prevent body scroll and pause Lenis smooth scroll
+        // Prevent body scroll and pause Lenis smooth scroll
         document.body.classList.add('overflow-hidden');
         if (window.lenis) window.lenis.stop();
 
-GSAP Animations
+        // GSAP Animations
         gsap.to(this.elements.overlay, { duration: 0.1, autoAlpha: 1 });
         gsap.to(this.elements.backdrop, { duration: 0.3, opacity: 1, ease: "power2.out" });
         gsap.fromTo(this.elements.content,
@@ -74,7 +73,7 @@ GSAP Animations
             onComplete: () => {
                 this.elements.overlay.style.display = 'none';
 
-Restore body scroll and resume Lenis smooth scroll
+                // Restore body scroll and resume Lenis smooth scroll
                 document.body.classList.remove('overflow-hidden');
                 if (window.lenis) window.lenis.start();
 
@@ -123,7 +122,7 @@ Restore body scroll and resume Lenis smooth scroll
         if (!this.currentPortfolio) return;
         this.elements.image.src = this.currentPortfolio.images[this.currentImageIndex];
 
-Update dots
+        // Update dots
         const dots = document.querySelectorAll('.portfolio-dot');
         dots.forEach((dot, idx) => {
             gsap.to(dot, {

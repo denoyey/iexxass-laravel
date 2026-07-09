@@ -31,16 +31,13 @@
                         ]) }}"
                         onclick="openPortfolioModal(JSON.parse(this.dataset.project))">
 
-                        <!-- Background Image (Lazy Loaded) -->
                         <img src="{{ Storage::url($project->thumbnail) }}" alt="{{ $project->title }}" loading="lazy"
                             class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover/card:scale-105">
 
-                        <!-- Simple Bottom Gradient -->
                         <div
                             class="absolute inset-x-0 bottom-0 h-1/2 bg-linear-to-t from-black/90 via-black/20 to-transparent pointer-events-none">
                         </div>
 
-                        <!-- Minimalist Title -->
                         <div class="absolute bottom-0 left-0 w-full p-5 z-10 pointer-events-none">
                             <h3
                                 class="text-white font-bold text-base md:text-lg leading-tight drop-shadow-md line-clamp-2 uppercase">
@@ -49,7 +46,7 @@
                         </div>
                     </div>
                 @empty
-                    <div class="w-full text-xs text-center text-gray-400 py-10">
+                    <div class="portfolio-empty w-full text-xs text-center text-gray-400 py-10">
                         {{ __('No projects available yet.') }}
                     </div>
                 @endforelse

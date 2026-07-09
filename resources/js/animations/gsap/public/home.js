@@ -84,7 +84,7 @@ export function initScrollAnimations() {
     }
 
     // Custom GSAP Hover animations & Scroll Entrance for cards
-    const cards = document.querySelectorAll(".card");
+    const cards = document.querySelectorAll(".card, .portfolio-card, .portfolio-empty");
     if (cards.length > 0) {
         // Entrance animation on scroll
         gsap.set(cards, { opacity: 0, y: 40, scale: 0.95 });
