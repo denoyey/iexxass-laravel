@@ -32,10 +32,8 @@
     <link rel="preconnect" href="http://127.0.0.1:5173" crossorigin>
     <link rel="preload" href="{{ asset('src/img/logoo.webp') }}" as="image" fetchpriority="high">
 
-    @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
-    @else
-    @endif
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+
     <link rel="canonical" href="https://iexxass.com" />
     <link rel="icon" type="image/png" href="{{ asset('src/img/logo.webp') }}">
 </head>

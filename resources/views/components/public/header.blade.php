@@ -1,4 +1,4 @@
-<header class="bg-white absolute top-10 md:top-2 left-0 w-full flex items-center z-10">
+<header id="public-navbar" class="bg-white absolute top-10 md:top-2 left-0 w-full flex items-center z-10">
     <div class="container mx-auto font-AbhayaLibre ">
         <div class="relative flex items-center">
             <div class="flex items-center px-4 lg:flex-1 lg:justify-center">

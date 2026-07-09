@@ -1,7 +1,7 @@
 @props(['icon', 'title', 'description', 'target', 'extraClass' => ''])
 
 <div
-    class="card flex flex-col h-full {{ $extraClass }} p-8 md:p-10 text-left bg-white/5 backdrop-blur-xl border border-white/10 rounded-md shadow-lg hover:bg-white/10 hover:shadow-2xl hover:border-white/20 transition-all duration-500 cursor-pointer">
+    class="card flex flex-col h-full {{ $extraClass }} p-6 lg:p-8 xl:p-10 text-left bg-white/5 backdrop-blur-xl border border-white/10 rounded-md shadow-lg hover:bg-white/10 hover:shadow-2xl hover:border-white/20 transition-all duration-500 cursor-pointer">
     <div class="mb-6">
         @if ($icon)
             <img src="{{ asset($icon) }}" alt="{{ $title }}" loading="lazy"
@@ -10,9 +10,10 @@
     </div>
     <div class="flex flex-col flex-1 text-white">
         <h2
-            class="text-[22px] lg:text-[28px] xl:text-[32px] font-semibold mb-3 group-hover:text-blue-300 transition-colors duration-300">
+            class="text-[22px] lg:text-[24px] xl:text-[28px] font-semibold mb-3 lg:mb-4 group-hover:text-blue-300 transition-colors duration-300">
             {{ $title }}</h2>
-        <p class="text-[14px] lg:text-[16px] leading-[1.8] text-gray-300 mb-8">{{ Str::limit($description, 130, '...') }}
+        <p class="text-[14px] lg:text-[15px] xl:text-[16px] leading-[1.7] text-gray-300 mb-6">
+            {{ Str::limit($description, 130, '...') }}
         </p>
         <div class="mt-auto">
             <a href="#{{ $target }}" data-target="{{ $target }}"

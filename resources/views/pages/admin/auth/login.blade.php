@@ -4,21 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="description" content="Login Portal Admin Denoyey">
+    <meta name="description" content="Login Portal Admin IExxass">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
     <meta name="googlebot" content="noindex, nofollow">
     <meta name="referrer" content="same-origin">
 
-    <title>Login - Admin Portal</title>
+    <title>Login - Admin Portal IExxass</title>
 
     <link rel="canonical" href="https://iexxass.com" />
     <link rel="icon" type="image/png" href="{{ asset('src/img/logo.webp') }}">
 
-    @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
-    @else
-    @endif
+    @vite(['resources/css/app.css', 'resources/js/app.js', 'resources/js/admin.js'])
 </head>
 
 <body class="bg-white flex h-dvh sm:min-h-screen overflow-hidden overscroll-none">

@@ -24,7 +24,7 @@
 }
 
 .navbar-fixed {
-    @apply z-9999 bg-red-400;
+    @apply fixed top-0 w-full z-9999 bg-white/90 backdrop-blur-md shadow-sm transition-all duration-300;
 }
 
 .hamburger-line {

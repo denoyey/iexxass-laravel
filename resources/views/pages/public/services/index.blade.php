@@ -18,7 +18,7 @@
                 </div>
             </div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 xl:gap-10">
                 @foreach ($services as $service)
                     <x-service-card :icon="$service->icon ? asset('storage/' . $service->icon) : ''" :title="$service->title" :description="nl2br(e($service->description))" :target="'service-' . $service->id" />
                 @endforeach

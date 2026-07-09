@@ -1,4 +1,4 @@
-<header class="bg-white absolute top-10 md:top-2 left-0 w-full flex items-center z-10">
+<header id="public-navbar" class="bg-white absolute top-10 md:top-2 left-0 w-full flex items-center z-10">
     <div class="container mx-auto font-AbhayaLibre ">
         <div class="relative flex items-center">
             <div class="flex items-center px-4 lg:flex-1 lg:justify-center">
@@ -34,6 +34,10 @@
                         <li class="group mb-2 md:mb-0">
                             <a href="#service" data-target="service"
                                 class="menu-link text-[16px] py-2 md:mx-6 flex justify-center w-full group-hover:text-blue-600 transition-colors">{{ __('Service') }}</a>
+                        </li>
+                        <li class="group mb-2 md:mb-0">
+                            <a href="#projects" data-target="projects"
+                                class="menu-link text-[16px] py-2 md:mx-6 flex justify-center w-full group-hover:text-blue-600 transition-colors">{{ __('Projects') }}</a>
                         </li>
                         <li class="group">
                             <a href="#contact" data-target="contact"

@@ -1,4 +1,3 @@
-import './bootstrap';
 import { initAdminModules } from './admin/index';
 import Sortable from 'sortablejs';
 

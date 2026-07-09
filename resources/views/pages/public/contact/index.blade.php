@@ -75,10 +75,15 @@
 
                     <!-- ReCaptcha & Submit Button (Outside space-y-12 to eliminate huge gaps) -->
                     <div class="mt-6 flex flex-col gap-4">
-                        <!-- ReCaptcha (Scaled down strictly) -->
-                        <div class="transform scale-[0.70] md:scale-75 origin-top-left h-[55px] md:h-[60px]">
-                            <div class="g-recaptcha" data-sitekey="{{ env('RECAPTCHA_SITE_KEY') }}"></div>
-                        </div>
+                        <!-- ReCaptcha (Matched with Admin Login) -->
+                        @if (env('RECAPTCHA_SITE_KEY'))
+                            <div class="mb-4">
+                                <div class="h-[59px] w-[228px]">
+                                    <div class="g-recaptcha transform scale-[0.75] origin-top-left"
+                                        data-sitekey="{{ env('RECAPTCHA_SITE_KEY') }}"></div>
+                                </div>
+                            </div>
+                        @endif
 
                         <!-- Submit Button -->
                         <div class="text-left mt-1">

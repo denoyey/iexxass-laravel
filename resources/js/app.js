@@ -1,4 +1,3 @@
-import './bootstrap';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import { initLenisAutoPrevent } from './components/lenis-auto-prevent';
@@ -12,14 +11,6 @@ import '@fontsource/abhaya-libre/800.css';
 import 'leaflet/dist/leaflet.css';
 
 gsap.registerPlugin(ScrollTrigger);
-
-import './bootstrap';
-import '@fontsource/abhaya-libre/400.css';
-import '@fontsource/abhaya-libre/500.css';
-import '@fontsource/abhaya-libre/600.css';
-import '@fontsource/abhaya-libre/700.css';
-import '@fontsource/abhaya-libre/800.css';
-import 'leaflet/dist/leaflet.css';
 
 // Import layout scripts (navbar, modal, backtotop)
 import './layout/navbar';
@@ -59,21 +50,26 @@ Promise.all([
     }
 
     setTimeout(() => {
-        const lenis = new Lenis();
-        window.lenis = lenis;
+        const isAdmin = document.getElementById('admin-content') !== null;
 
-        lenis.on('scroll', ScrollTrigger.update);
-        gsap.ticker.add((time) => {
-            lenis.raf(time * 1000);
-        });
-        gsap.ticker.lagSmoothing(0);
+        if (!isAdmin) {
+            const lenis = new Lenis();
+            window.lenis = lenis;
+
+            lenis.on('scroll', ScrollTrigger.update);
+            gsap.ticker.add((time) => {
+                lenis.raf(time * 1000);
+            });
+            gsap.ticker.lagSmoothing(0);
+
+            initLenisAutoPrevent();
+        }
 
         initAnimations();
         initMap();
         initContactForm();
         initImageSecurity();
         new BackToTopController();
-        initLenisAutoPrevent();
 
         // Initialize PDF Viewers
         document.querySelectorAll('.pdf-viewer-instance').forEach(el => {
