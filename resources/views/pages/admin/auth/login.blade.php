@@ -15,7 +15,10 @@
     <link rel="canonical" href="https://iexxass.com" />
     <link rel="icon" type="image/png" href="{{ asset('src/img/logo.webp') }}">
 
-    @vite(['resources/css/app.css', 'resources/js/admin.js'])
+    @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @else
+    @endif
 </head>
 
 <body class="bg-white flex h-dvh sm:min-h-screen overflow-hidden overscroll-none">
