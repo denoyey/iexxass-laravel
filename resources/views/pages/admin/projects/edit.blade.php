@@ -46,11 +46,11 @@
                                 <div class="mt-4 border-t border-gray-100 pt-4">
                                     <h4 class="text-[12px] sm:text-[13px] font-medium text-gray-700 mb-1">Manajemen Galeri Proyek</h4>
                                     <p class="text-[11px] text-gray-500 mb-3">Hapus atau ubah gambar galeri yang tersimpan di bawah ini.</p>
-                                    <div class="grid grid-cols-3 sm:grid-cols-4 gap-3">
+                                    <div class="flex flex-nowrap overflow-x-auto gap-3 pb-3 snap-x [&::-webkit-scrollbar]:h-1.5 [&::-webkit-scrollbar-thumb]:bg-gray-300 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-transparent">
                                         @foreach ($project->images as $image)
-                                            <div class="image-preview-wrapper" data-target="preview-{{ $image->id }}">
+                                            <div class="image-preview-wrapper shrink-0 snap-start" style="width: 120px;" data-target="preview-{{ $image->id }}">
                                                 <div id="preview-{{ $image->id }}"
-                                                    class="relative group rounded-md overflow-hidden border border-gray-200 aspect-square bg-gray-100 shadow-sm">
+                                                    class="relative group rounded-md overflow-hidden border border-gray-200 aspect-square bg-gray-100 shadow-sm w-full h-full">
                                                     <img src="{{ Storage::url($image->image_path) }}"
                                                         class="preview-img w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                                                         alt="Gallery image">
