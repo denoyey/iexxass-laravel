@@ -12,8 +12,10 @@ class LoginController extends Controller
 {
     public function showLoginForm(Request $request)
     {
-        if (RateLimiter::tooManyAttempts($request->ip(), LoginRequest::MAX_ATTEMPTS)) {
-            $seconds = RateLimiter::availableIn($request->ip());
+        $throttleKeyIp = 'login_ip|'.$request->ip();
+
+        if (RateLimiter::tooManyAttempts($throttleKeyIp, LoginRequest::MAX_ATTEMPTS)) {
+            $seconds = RateLimiter::availableIn($throttleKeyIp);
             $decaySeconds = LoginRequest::DECAY_MINUTES * 60;
             abort(429, '', ['Retry-After' => $seconds ?: $decaySeconds]);
         }
@@ -43,6 +45,7 @@ class LoginController extends Controller
             if ($request->has('is_idle')) {
                 session()->flash('idle_timeout', 'Anda sudah tidak aktif. Silahkan login kembali.');
             }
+
             return response()->json(['redirect' => route('admin.login', ['logged_out' => 1])]);
         }
 
