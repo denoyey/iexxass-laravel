@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>429 - {{ __('Too Many Requests') }}</title>
+    <link rel="canonical" href="https://iexxass.com" />
+    <link rel="icon" type="image/png" href="{{ asset('src/img/logo.webp') }}">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
