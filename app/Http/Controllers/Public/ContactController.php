@@ -11,11 +11,11 @@ class ContactController extends Controller
 {
     public function store(Request $request)
     {
-        $request->validate([
-            'name' => 'required',
-            'email' => 'required|email',
-            'subject' => 'required',
-            'message' => 'required',
+        $validated = $request->validate([
+            'name' => 'required|string|max:100',
+            'email' => 'required|email:rfc,dns|max:100',
+            'subject' => 'required|string|max:150',
+            'message' => 'required|string|max:2000',
         ]);
 
         $response = Http::asForm()->post('https://www.google.com/recaptcha/api/siteverify', [
@@ -31,7 +31,9 @@ class ContactController extends Controller
             ]);
         }
 
-        Contact::create($request->all());
+        $validated['message'] = strip_tags($validated['message']);
+
+        Contact::create($validated);
 
         return response()->json([
             'success' => true,

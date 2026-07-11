@@ -16,12 +16,12 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Public\ContactController;
 use App\Http\Controllers\Public\FileebookController;
 use App\Http\Controllers\Public\HalamanController;
+use App\Http\Middleware\SecureContactFormMiddleware;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware('throttle:guest')->group(function () {
     Route::get('/', [HalamanController::class, 'dashboard'])->name('dashboard');
-    Route::post('/', [ContactController::class, 'store'])->name('contact.us');
     Route::get('/download/ebook-portofolio', [FileebookController::class, 'download'])->name('file.download');
     Route::get('/lang/{locale}', function (string $locale) {
         if (! in_array($locale, ['en', 'id', 'fr'])) {
@@ -33,6 +33,10 @@ Route::middleware('throttle:guest')->group(function () {
         return redirect()->back();
     })->name('lang.switch');
 });
+
+Route::post('/', [ContactController::class, 'store'])
+    ->name('contact.us')
+    ->middleware(SecureContactFormMiddleware::class);
 
 Route::prefix('/ix-core')->name('admin.')->group(function () {
     Route::get('/', function () {
