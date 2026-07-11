@@ -94,9 +94,9 @@ Route::prefix('/ix-core')->name('admin.')->group(function () {
             ->name('projects.reorder')
             ->withoutMiddleware('prevent-spam')
             ->middleware('throttle:60,1');
-        Route::delete('projects/delete-all-images/{id_project}', [ProjectController::class, 'destroyAllImages'])->name('projects.destroyAllImages');
-        Route::post('projects/update-image/{id_project_image}', [ProjectController::class, 'updateImage'])->name('projects.updateImage');
-        Route::delete('projects/delete-image/{id_project_image}', [ProjectController::class, 'destroyImage'])->name('projects.destroyImage');
+        Route::delete('projects/delete-all-images/{project}', [ProjectController::class, 'destroyAllImages'])->name('projects.destroyAllImages');
+        Route::post('projects/update-image/{image}', [ProjectController::class, 'updateImage'])->name('projects.updateImage');
+        Route::delete('projects/delete-image/{image}', [ProjectController::class, 'destroyImage'])->name('projects.destroyImage');
         Route::resource('projects', ProjectController::class);
     });
 

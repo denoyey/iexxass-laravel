@@ -31,6 +31,7 @@ class ProjectService
                 'title' => $data['title'],
                 'category' => $data['category'] ?? null,
                 'description' => $data['description'] ?? null,
+                'project_url' => $data['project_url'] ?? null,
                 'thumbnail' => $thumbnailPath,
                 'order_column' => $maxOrder + 1,
             ]);
@@ -59,6 +60,7 @@ class ProjectService
                 'title' => $data['title'],
                 'category' => $data['category'] ?? null,
                 'description' => $data['description'] ?? null,
+                'project_url' => $data['project_url'] ?? null,
             ];
 
             if ($thumbnail) {

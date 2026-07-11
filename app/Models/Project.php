@@ -11,6 +11,7 @@ class Project extends Model
         'category',
         'thumbnail',
         'description',
+        'project_url',
         'order_column',
     ];
 

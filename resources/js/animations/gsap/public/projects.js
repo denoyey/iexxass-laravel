@@ -16,6 +16,8 @@ class PortfolioModal {
             title: document.getElementById('portfolioModalTitle'),
             category: document.getElementById('portfolioModalCategory'),
             desc: document.getElementById('portfolioModalDesc'),
+            linkContainer: document.getElementById('portfolioModalLinkContainer'),
+            linkButton: document.getElementById('portfolioModalLink'),
         };
 
         this.bindEvents();
@@ -37,6 +39,15 @@ class PortfolioModal {
         this.elements.title.innerText = project.title;
         this.elements.category.innerText = project.category;
         this.elements.desc.innerText = project.description;
+
+        // Handle Optional Link Button
+        if (project.project_url) {
+            this.elements.linkButton.href = project.project_url;
+            this.elements.linkContainer.style.display = 'block';
+        } else {
+            this.elements.linkButton.href = '#';
+            this.elements.linkContainer.style.display = 'none';
+        }
 
         this.updateImage();
         this.setupIndicators();

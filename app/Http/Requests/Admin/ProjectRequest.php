@@ -26,6 +26,7 @@ class ProjectRequest extends FormRequest
             'title' => 'required|string|max:255',
             'category' => 'nullable|string|max:255',
             'description' => 'nullable|string',
+            'project_url' => 'nullable|url|max:255',
             'images' => 'nullable|array',
             'images.*' => 'image|mimes:jpeg,png,jpg,webp|max:2048',
         ];
@@ -37,5 +38,18 @@ class ProjectRequest extends FormRequest
         }
 
         return $rules;
+    }
+
+    /**
+     * Get the error messages for the defined validation rules.
+     *
+     * @return array<string, string>
+     */
+    public function messages(): array
+    {
+        return [
+            'thumbnail.uploaded' => 'Ukuran gambar utama melebihi batas maksimal server (2MB).',
+            'images.*.uploaded' => 'Salah satu gambar galeri melebihi batas maksimal server (2MB).',
+        ];
     }
 }

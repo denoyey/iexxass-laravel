@@ -22,7 +22,10 @@ export function initSortable() {
 
                 debounceTimeout = setTimeout(() => {
                     const rows = container.querySelectorAll('[data-id]');
-                    const order = Array.from(rows).map(row => row.getAttribute('data-id'));
+                    const order = Array.from(rows).map((row, index) => ({
+                        id: row.getAttribute('data-id'),
+                        position: index + 1
+                    }));
 
                     fetch(route, {
                         method: 'POST',
@@ -36,13 +39,13 @@ export function initSortable() {
                         .then(data => {
                             if (data.success) {
                                 if (window.showToast) {
-                                    window.showToast('success', data.message);
+                                    window.showToast('success', 'Berhasil!', data.message || 'Urutan data berhasil diperbarui.');
                                 } else {
-                                    console.log(data.message);
+                                    console.log(data.message || 'Berhasil diperbarui');
                                 }
                             } else if (data.error) {
                                 if (window.showToast) {
-                                    window.showToast('error', data.error);
+                                    window.showToast('error', 'Gagal!', data.error || 'Terjadi kesalahan.');
                                 } else {
                                     console.error(data.error);
                                 }
@@ -51,7 +54,7 @@ export function initSortable() {
                         .catch(error => {
                             console.error('Error during sortable fetch:', error);
                             if (window.showToast) {
-                                window.showToast('error', 'Terjadi kesalahan saat mengurutkan data.');
+                                window.showToast('error', 'Gagal!', 'Terjadi kesalahan saat mengurutkan data.');
                             }
                         });
                 }, 800);

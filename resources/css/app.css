@@ -48,25 +48,7 @@
     color: var(--color-BG-White);
 }
 
-/* Custom Elegant Scrollbar */
-::-webkit-scrollbar {
-    width: 5px;
-    height: 5px;
-}
-
-::-webkit-scrollbar-track {
-    background: rgba(0, 0, 0, 0.03);
-}
-
-::-webkit-scrollbar-thumb {
-    background: #3b82f6;
-    /* Bright Blue for high contrast */
-    border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: #60a5fa;
-}
+/* Removed Custom Scrollbar to allow native OS auto-hiding scrollbars */
 
 /* Fix Chrome/Browser Autofill White Background on Transparent Inputs */
 input:-webkit-autofill,

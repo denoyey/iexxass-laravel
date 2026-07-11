@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('category')->nullable();
             $table->string('thumbnail');
             $table->text('description')->nullable();
+            $table->string('project_url')->nullable();
             $table->integer('order_column')->default(0);
             $table->timestamps();
         });

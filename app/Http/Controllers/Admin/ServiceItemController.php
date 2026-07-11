@@ -138,4 +138,19 @@ class ServiceItemController extends Controller
 
         return redirect()->route('admin.services.items.index')->with('success', "$count layanan berhasil dihapus.");
     }
+
+    public function reorder(Request $request)
+    {
+        $request->validate([
+            'order' => 'required|array',
+            'order.*.id' => 'required|exists:services,id',
+            'order.*.position' => 'required|integer',
+        ]);
+
+        foreach ($request->order as $item) {
+            Service::where('id', $item['id'])->update(['order_column' => $item['position']]);
+        }
+
+        return response()->json(['success' => true]);
+    }
 }

@@ -23,6 +23,7 @@
                             'title' => $project->title,
                             'category' => $project->category ?? __('Portfolio'),
                             'description' => $project->description ?? '',
+                            'project_url' => $project->project_url ?? null,
                             'thumbnail' => Storage::url($project->thumbnail),
                             'images' =>
                                 $project->images->count() > 0
@@ -91,34 +92,35 @@
     </div>
 
     <!-- Modal Content -->
-    <div id="portfolioModalContent"
-        class="relative w-full h-full md:h-auto max-h-screen md:max-h-[90vh] max-w-6xl bg-white md:rounded-md shadow-2xl overflow-hidden flex flex-col md:flex-row transform scale-95 opacity-0">
+    <!-- Modal Content -->
+    <div id="portfolioModalContent" data-lenis-prevent
+        class="relative w-full h-dvh md:h-[600px] md:max-h-[90vh] max-w-6xl bg-white md:rounded-md shadow-2xl overflow-hidden flex flex-col md:flex-row transform scale-95 opacity-0">
 
         <!-- Close Button -->
         <button onclick="closePortfolioModal()"
-            class="absolute top-4 right-4 z-20 w-10 h-10 flex items-center justify-center bg-black/20 hover:bg-black/40 md:bg-gray-100 md:hover:bg-gray-200 rounded-full text-white md:text-gray-600 transition-colors">
-            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            class="absolute top-4 right-4 z-20 w-8 h-8 md:w-10 md:h-10 flex items-center justify-center bg-black/20 hover:bg-black/40 md:bg-gray-100 md:hover:bg-gray-200 rounded-full text-white md:text-gray-600 transition-colors">
+            <svg class="w-4 h-4 md:w-6 md:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
             </svg>
         </button>
 
         <!-- Left: Image Slider -->
         <div
-            class="w-full md:w-3/5 h-[40vh] md:h-[600px] relative bg-gray-900 flex items-center justify-center overflow-hidden group">
+            class="w-full md:w-3/5 aspect-video md:aspect-auto md:h-full relative bg-white flex items-center justify-center overflow-hidden shrink-0 group">
             <img id="portfolioModalImage" src="" alt="Project Image"
-                class="w-full h-full object-cover md:object-contain bg-black">
+                class="w-full h-full object-contain p-4 md:p-8">
 
             <!-- Slider Controls -->
             <div id="portfolioModalControls" class="hidden">
                 <button onclick="portfolioPrevImage()"
-                    class="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center bg-black/40 hover:bg-black/70 text-white rounded-full backdrop-blur-sm transition-all md:opacity-0 md:group-hover:opacity-100 z-10">
-                    <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    class="absolute left-4 top-1/2 -translate-y-1/2 w-8 h-8 md:w-10 md:h-10 flex items-center justify-center bg-black/40 hover:bg-black/70 text-white rounded-full backdrop-blur-sm transition-all md:opacity-0 md:group-hover:opacity-100 z-10">
+                    <svg class="w-4 h-4 md:w-6 md:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
                     </svg>
                 </button>
                 <button onclick="portfolioNextImage()"
-                    class="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center bg-black/40 hover:bg-black/70 text-white rounded-full backdrop-blur-sm transition-all md:opacity-0 md:group-hover:opacity-100 z-10">
-                    <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    class="absolute right-4 top-1/2 -translate-y-1/2 w-8 h-8 md:w-10 md:h-10 flex items-center justify-center bg-black/40 hover:bg-black/70 text-white rounded-full backdrop-blur-sm transition-all md:opacity-0 md:group-hover:opacity-100 z-10">
+                    <svg class="w-4 h-4 md:w-6 md:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                     </svg>
                 </button>
@@ -132,13 +134,31 @@
         </div>
 
         <!-- Right: Description -->
-        <div class="w-full md:w-2/5 p-6 md:p-10 flex flex-col justify-center bg-white overflow-y-auto">
-            <div>
+        <div class="w-full md:w-2/5 flex flex-col bg-white flex-1 md:flex-none md:h-full min-h-0 overflow-hidden">
+            <!-- Fixed Header -->
+            <div class="px-6 md:px-10 pt-6 md:pt-10 pb-4 md:pb-6 shrink-0 mt-0">
                 <span id="portfolioModalCategory"
-                    class="block text-blue-600 text-xs font-semibold uppercase tracking-wider mb-2"></span>
-                <h3 id="portfolioModalTitle"
-                    class="text-xl md:text-2xl font-bold text-gray-900 mb-4 leading-snug uppercase"></h3>
+                    class="inline-block bg-blue-50 text-blue-600 px-3 py-1 rounded-md text-xs font-bold uppercase tracking-wider mb-2"></span>
+                <h3 id="portfolioModalTitle" class="text-xl md:text-2xl font-bold text-gray-900 leading-snug uppercase">
+                </h3>
+            </div>
+
+            <!-- Scrollable Description -->
+            <div class="flex-1 overflow-y-auto min-h-0 px-6 md:px-10 pb-6 md:pb-10 pt-0" data-lenis-prevent>
                 <p id="portfolioModalDesc" class="text-gray-600 text-sm leading-relaxed"></p>
+
+                <!-- Project Link Button (Optional) -->
+                <div id="portfolioModalLinkContainer" class="mt-8" style="display: none;">
+                    <a id="portfolioModalLink" href="#" target="_blank" rel="noopener noreferrer"
+                        class="inline-flex items-center justify-center bg-BG-IExxass hover:bg-blue-800 text-white font-medium py-1.5 px-4 text-[11px] sm:text-xs rounded-md shadow-sm hover:shadow-md transition-all duration-300 group">
+                        <span>Kunjungi Website</span>
+                        <svg class="w-3 h-3 ml-1.5 transform transition-transform duration-300" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
