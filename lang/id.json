@@ -23,5 +23,15 @@
     "Proof of Excellence": "Bukti Keunggulan",
     "Our Projects": "Proyek Kami",
     "No projects available yet.": "Belum ada proyek yang tersedia.",
-    "Projects": "Proyek"
+    "Projects": "Proyek",
+    "Page Not Found": "Halaman Tidak Ditemukan",
+    "Sorry, the page you are looking for might have been removed, had its name changed, or is temporarily unavailable.": "Maaf, halaman yang Anda cari mungkin telah dihapus, namanya diubah, atau sementara tidak tersedia.",
+    "Back to Home": "Kembali ke Beranda",
+    "Too Many Requests": "Terlalu Banyak Permintaan",
+    "Our system detected unusual activity from your device. Your access has been temporarily limited for server security.": "Sistem kami mendeteksi aktivitas yang tidak biasa dari perangkat Anda. Akses Anda telah dibatasi sementara demi keamanan server kami.",
+    "Please wait a moment before trying again.": "Silakan tunggu beberapa saat sebelum mencoba lagi.",
+    "Go Back to Previous Page": "Kembali ke Halaman Sebelumnya",
+    "Internal Server Error": "Kesalahan Server Internal",
+    "Sorry, an unexpected error occurred on our server while processing your request. Our technical team has been notified and is working to fix it.": "Maaf, terjadi kesalahan tak terduga pada server kami saat memproses permintaan Anda. Tim teknis kami telah diberitahu dan sedang berusaha memperbaikinya.",
+    "Back to Homepage": "Kembali ke Beranda"
 }

@@ -1,6 +1,7 @@
 @import 'tailwindcss';
 /* --- Admin Template Imports --- */
 @import './components/loading.css';
+/* Trigger Vite Rebuild */
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
