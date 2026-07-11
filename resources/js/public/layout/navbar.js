@@ -1,6 +1,6 @@
 import gsap from 'gsap';
 
-Navbar Fixed
+// Navbar Fixed
 window.onscroll = function () {
     const header = document.querySelector("header");
     if (!header) return;
@@ -13,7 +13,7 @@ window.onscroll = function () {
     }
 };
 
-Hamburger Menu
+// Hamburger Menu
 const hamburger = document.querySelector("#hamburger");
 const navbar = document.querySelector("#nav-menu");
 
@@ -51,7 +51,7 @@ if (hamburger && navbar) {
         }
     });
 
-Close menu when clicking outside
+    // Close menu when clicking outside
     document.addEventListener('click', function (e) {
         if (isMenuOpen && !hamburger.contains(e.target) && !navbar.contains(e.target)) {
             hamburger.classList.remove('hamburger-active');
@@ -70,7 +70,7 @@ Close menu when clicking outside
         }
     });
 
-Reset styles if resized to desktop to prevent transform conflicts
+    // Reset styles if resized to desktop to prevent transform conflicts
     window.addEventListener('resize', () => {
         if (window.innerWidth >= 768 && isMenuOpen) {
             hamburger.classList.remove('hamburger-active');
@@ -81,7 +81,7 @@ Reset styles if resized to desktop to prevent transform conflicts
     });
 }
 
-Smooth Scrolling Menu Links
+// Smooth Scrolling Menu Links
 document.querySelectorAll('.menu-link').forEach(link => {
     link.addEventListener('click', function (e) {
         e.preventDefault();
@@ -96,6 +96,8 @@ document.querySelectorAll('.menu-link').forEach(link => {
             if (hamburgerBtn && hamburgerBtn.classList.contains('hamburger-active')) {
                 hamburgerBtn.click();
             }
+        } else {
+            window.location.href = this.href;
         }
     });
 });

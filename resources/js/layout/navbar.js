@@ -83,6 +83,8 @@ document.querySelectorAll('.menu-link').forEach(link => {
             if (hamburgerBtn && hamburgerBtn.classList.contains('hamburger-active')) {
                 hamburgerBtn.click();
             }
+        } else {
+            window.location.href = this.href;
         }
     });
 });

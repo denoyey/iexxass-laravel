@@ -24,23 +24,23 @@
                     class="hidden absolute py-6 bg-white/95 backdrop-blur-xl shadow-md border border-gray-100 w-[calc(100%-2rem)] left-4 top-[45px] rounded-md md:block md:w-auto md:border-none md:backdrop-blur-none md:mt-0 lg:mt-10 md:absolute md:left-1/2 md:-translate-x-1/2 md:top-1/2 lg:-translate-y-1/2 md:bg-transparent md:shadow-none md:max-w-full md:rounded-none z-50">
                     <ul class="block md:flex md:justify-center font-bold text-center">
                         <li class="group mb-2 md:mb-0">
-                            <a href="#home" data-target="home"
+                            <a href="{{ url('/#home') }}" data-target="home"
                                 class="menu-link text-[16px] py-2 md:mx-6 flex justify-center w-full group-hover:text-blue-600 transition-colors">{{ __('Home') }}</a>
                         </li>
                         <li class="group mb-2 md:mb-0">
-                            <a href="#about-us" data-target="about-us"
+                            <a href="{{ url('/#about-us') }}" data-target="about-us"
                                 class="menu-link text-[16px] py-2 md:mx-6 flex justify-center w-full group-hover:text-blue-600 transition-colors">{{ __('About Us') }}</a>
                         </li>
                         <li class="group mb-2 md:mb-0">
-                            <a href="#service" data-target="service"
+                            <a href="{{ url('/#service') }}" data-target="service"
                                 class="menu-link text-[16px] py-2 md:mx-6 flex justify-center w-full group-hover:text-blue-600 transition-colors">{{ __('Service') }}</a>
                         </li>
                         <li class="group mb-2 md:mb-0">
-                            <a href="#projects" data-target="projects"
+                            <a href="{{ url('/#projects') }}" data-target="projects"
                                 class="menu-link text-[16px] py-2 md:mx-6 flex justify-center w-full group-hover:text-blue-600 transition-colors">{{ __('Projects') }}</a>
                         </li>
                         <li class="group">
-                            <a href="#contact" data-target="contact"
+                            <a href="{{ url('/#contact') }}" data-target="contact"
                                 class="menu-link text-[16px] py-2 md:mx-6 flex justify-center w-full group-hover:text-blue-600 transition-colors">{{ __('Contact') }}</a>
                         </li>
                     </ul>
