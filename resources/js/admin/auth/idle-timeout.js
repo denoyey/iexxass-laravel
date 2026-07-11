@@ -153,7 +153,11 @@ class IdleTimeoutManager {
             }
         } else {
             const idleTime = now - this.lastActivity;
-            if (idleTime >= this.idleThreshold) {
+            const maxBackendTime = this.idleThreshold + this.warningDuration + 5000;
+            
+            if (idleTime > maxBackendTime) {
+                this.forceLogout(true);
+            } else if (idleTime >= this.idleThreshold) {
                 this.showWarning();
             }
         }
@@ -232,7 +236,7 @@ class IdleTimeoutManager {
             const csrfMeta = document.querySelector('meta[name="csrf-token"]');
             const token = csrfMeta ? csrfMeta.content : '';
 
-            await fetch('/ix-core/keep-alive', {
+            const response = await fetch('/ix-core/keep-alive', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -240,6 +244,11 @@ class IdleTimeoutManager {
                     'Accept': 'application/json'
                 }
             });
+
+            if (!response.ok) {
+                window.location.reload();
+                return;
+            }
         } catch (error) {
             console.error('Failed to keep session alive:', error);
         }
